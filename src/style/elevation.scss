@@ -1,0 +1,91 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'src/style/helpers/theme';
+@import 'src/style/helpers/animation';
+@import 'src/style/helpers/conversion';
+
+$light: (
+  shadow: light-theme(primary-shadow),
+);
+
+$dark: (
+  shadow: dark-theme(primary-shadow),
+);
+
+%elevation-transition {
+  transition: box-shadow $transition-duration $transition-timing-function;
+}
+
+%elevation-1 {
+  @extend %elevation-transition;
+
+  @include theme() {
+    box-shadow: 0 0 0 hex-to-rgba(theme-style(shadow), .12), 0 0 0 hex-to-rgba(theme-style(shadow), .6);
+  }
+
+  &:hover {
+    @include theme() {
+      box-shadow: 0 4px 8px hex-to-rgba(theme-style(shadow), .24), 0 2px 4px hex-to-rgba(theme-style(shadow), .12);
+    }
+  }
+}
+
+%elevation-2 {
+  @extend %elevation-transition;
+
+  @include theme() {
+    box-shadow: 0 0 1px hex-to-rgba(theme-style(shadow), .12), 0 0 0 hex-to-rgba(theme-style(shadow), .6);
+  }
+
+  &:hover {
+    @include theme() {
+      box-shadow: 0 4px 8px hex-to-rgba(theme-style(shadow), .24), 0 2px 4px hex-to-rgba(theme-style(shadow), .12);
+    }
+  }
+}
+
+%elevation-3 {
+  @extend %elevation-transition;
+
+  @include theme() {
+    box-shadow: 0 3px 7px hex-to-rgba(theme-style(shadow), .24), 0 2px 4px hex-to-rgba(theme-style(shadow), .12);
+  }
+
+  &:hover {
+    @include theme() {
+      box-shadow: 0 6px 12px hex-to-rgba(theme-style(shadow), .24), 0 3px 6px hex-to-rgba(theme-style(shadow), .12);
+    }
+  }
+}
+
+%elevation-4 {
+  @include theme() {
+    box-shadow: 0 8px 16px hex-to-rgba(theme-style(shadow), .24), 0 4px 8px hex-to-rgba(theme-style(shadow), .12);
+  }
+}
+
+%elevation-5 {
+  @include theme() {
+    box-shadow: 0 12px 24px hex-to-rgba(theme-style(shadow), .24), 0 6px 12px hex-to-rgba(theme-style(shadow), .12);
+  }
+}
+
+.is-elevation-1 {
+  @extend %elevation-1;
+}
+
+.is-elevation-2 {
+  @extend %elevation-2;
+}
+
+.is-elevation-3 {
+  @extend %elevation-3;
+}
+
+.is-elevation-4 {
+  @extend %elevation-4;
+}
+
+.is-elevation-5 {
+  @extend %elevation-5;
+}

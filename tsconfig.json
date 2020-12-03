@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "target": "esnext",
+    "noImplicitReturns": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "dist/types",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "rootDir": "..",
+    "baseUrl": ".",
+    "paths": {
+      "$/*": [
+        "../*"
+      ],
+      "#/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "references": [
+    { "path": "../foundation" },
+    { "path": "../rocket" },
+    { "path": "../focus" }
+  ],
+  "files": [
+    "../foundation/index.ts",
+    "../rocket/index.ts",
+    "../focus/index.ts"
+  ],
+  "include": [
+    "*.ts",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "*.config.js"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
+    "typings"
+  ]
+}

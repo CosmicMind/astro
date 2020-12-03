@@ -1,0 +1,14 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'src/style/helpers/theme';
+@import 'src/style/helpers/specs';
+
+.box {
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}

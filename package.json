@@ -1,0 +1,57 @@
+{
+  "name": "Astro",
+  "version": "1.0.0",
+  "description": "CosmicMind application.",
+  "private": true,
+  "main": "index.ts",
+  "dependencies": {
+    "grapheme-splitter": "^1.0.4"
+  },
+  "devDependencies": {
+    "@koa/router": "^10.0.0",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@types/d3": "^6.2.0",
+    "@types/koa": "^2.11.6",
+    "@types/koa-static": "^4.0.1",
+    "@types/koa-views": "^2.0.4",
+    "@types/koa__router": "^8.0.3",
+    "@vue/compiler-sfc": "^3.0.2",
+    "ava": "^3.13.0",
+    "d3": "^6.2.0",
+    "koa": "^2.13.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.3.1",
+    "node-sass": "^5.0.0",
+    "pug": "^3.0.0",
+    "rollup": "^2.33.3",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-pug": "^1.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-vue": "^6.0.0-beta.11",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2",
+    "vue": "^3.0.3"
+  },
+  "scripts": {
+    "install": "sudo npm install --arch=x64 --platform=linux",
+    "test": "ava",
+    "watch:test": "npx ava --watch",
+    "build:dev": "rollup -c rollup.config.js",
+    "watch:dev": "rollup -c rollup.config.js -w",
+    "build:prod": "rollup -c rollup.config.js",
+    "web": "node dist/server/web.esm.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmicmind/astro.git"
+  },
+  "author": "daniel@cosmicmind.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/cosmicmind/astro/issues"
+  },
+  "homepage": "https://github.com/cosmicmind/astro#readme"
+}

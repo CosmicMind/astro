@@ -1,0 +1,103 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'src/style/helpers/spacing';
+@import 'src/style/helpers/responsive';
+
+*,
+*:after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  @include margin-block();
+  @include margin-inline();
+  @include padding-block();
+  @include padding-inline();
+}
+
+[v-cloak] {
+  display: none
+}
+
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.is-fixed {
+  position: fixed !important;
+}
+
+.is-hidden-text {
+  text-indent: -1000px !important;
+  overflow: hidden !important;
+}
+
+@include is-mobile() {
+  .is-not-mobile,
+  .is-tablet,
+  .is-desktop,
+  .is-widescreen,
+  .is-fullhd,
+  .is-gte-tablet,
+  .is-gte-desktop,
+  .is-gte-widescreen {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+
+@include is-tablet() {
+  .is-mobile,
+  .is-not-tablet,
+  .is-desktop,
+  .is-widescreen,
+  .is-fullhd,
+  .is-gte-desktop,
+  .is-gte-widescreen {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+
+@include is-desktop() {
+  .is-mobile,
+  .is-tablet,
+  .is-not-desktop,
+  .is-widescreen,
+  .is-fullhd,
+  .is-lte-tablet,
+  .is-gte-widescreen {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+
+@include is-widescreen() {
+  .is-mobile,
+  .is-tablet,
+  .is-desktop,
+  .is-not-widescreen,
+  .is-fullhd,
+  .is-lte-tablet,
+  .is-lte-desktop {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+
+@include is-fullhd() {
+  .is-mobile,
+  .is-tablet,
+  .is-desktop,
+  .is-widescreen,
+  .is-not-fullhd,
+  .is-lte-tablet,
+  .is-lte-desktop,
+  .is-lte-widescreen {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}

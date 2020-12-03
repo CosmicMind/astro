@@ -1,0 +1,29 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'src/style/helpers/theme';
+
+$light: (
+  color-left: #eff1f2,
+  color-center: #e9e9e9,
+  color-right: #eff1f2
+);
+
+$dark: (
+  color-left: #323338,
+  color-center: #303030,
+  color-right: #323338
+);
+
+.shimmer {
+  @include theme() {
+    background: theme-style(color-left);
+    background: linear-gradient(90deg, theme-style(color-left) 0%, theme-style(color-center) 25%, theme-style(color-center) 50%, theme-style(color-center) 75%, theme-style(color-right) 100%);
+  }
+}
+
+.shimmer-dark {
+  @include theme() {
+    background: theme-style(color-left);
+    background: linear-gradient(90deg, #323338 0%, #303030 25%, #303030 50%, #303030 75%, #323338 100%);
+  }
+}

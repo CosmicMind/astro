@@ -1,0 +1,29 @@
+//- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+          
+    each content, name in meta 
+      meta(name=name, content=content)
+
+    each content, property in properties
+      meta(property=property, content=content)
+
+    //- link(rel='icon', type='image/png', href='/favicon.png')
+    //- link(rel='shortcut icon', type='image/png', href='/favicon.png')
+    //- link(rel='apple-touch-icon', type='image/png', href='/favicon.png')
+    
+    title=title
+
+    each style in styles
+      link(rel='stylesheet', type='text/css', media='all', href=style)
+
+  body
+    #app
+    #modal
+
+    each script in scripts
+      script(src=script, defer)

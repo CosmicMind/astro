@@ -1,0 +1,87 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'src/style/helpers/specs';
+
+@mixin is-mobile() {
+  @media all and (max-width: $max-mobile-width) {
+    @content;
+  }
+}
+
+@mixin is-tablet() {
+  @media all and (min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
+    @content;
+  }
+}
+
+@mixin is-lte-tablet() {
+  @media all and (max-width: $max-mobile-width) {
+    @content;
+  }
+}
+
+@mixin is-gte-tablet() {
+  @media all and (min-width: $min-desktop-width) {
+    @content;
+  }
+}
+
+@mixin is-desktop() {
+  @media all and (min-width: $min-desktop-width) and (max-width: $max-desktop-width) {
+    @content;
+  }
+}
+
+@mixin is-lte-desktop() {
+  @media all and (max-width: $max-tablet-width) {
+    @content;
+  }
+}
+
+@mixin is-gte-desktop() {
+  @media all and (min-width: $min-widescreen-width) {
+    @content;
+  }
+}
+
+@mixin is-widescreen() {
+  @media all and (min-width: $min-widescreen-width) and (max-width: $max-widescreen-width) {
+    @content;
+  }
+}
+
+@mixin is-lte-widescreen() {
+  @media all and (max-width: $max-desktop-width) {
+    @content;
+  }
+}
+
+@mixin is-gte-widescreen() {
+  @media all and (min-width: $min-fullhd-width) {
+    @content;
+  }
+}
+
+@mixin is-fullhd() {
+  @media all and (min-width: $min-fullhd-width) {
+    @content;
+  }
+}
+
+@mixin is-lte-fullhd() {
+  @media all and (max-width: $max-widescreen-width) {
+    @content;
+  }
+}
+
+@mixin is-portrait() {
+  @media all and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin is-landscape() {
+  @media all and (orientation: landscape) {
+    @content;
+  }
+}

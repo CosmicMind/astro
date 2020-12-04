@@ -37,11 +37,10 @@ export default {
 </script>
 
 <style lang='scss'>
-@import 'src/style/helpers/conversion';
-@import 'src/style/helpers/responsive';
+@import 'src/style/helpers/tools';
 
 .main {
-  background-color: hex-to-rgba(#990000);
+  background-color: hex-to-rgba(#889977);
 }
 
 </style>

@@ -38,9 +38,10 @@ export default {
 
 <style lang='scss'>
 @import 'src/style/helpers/conversion';
+@import 'src/style/helpers/responsive';
 
 .main {
-  background-color: hex-to-rgba(#332211)
+  background-color: hex-to-rgba(#990000);
 }
 
 </style>

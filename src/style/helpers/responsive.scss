@@ -1,87 +1,125 @@
 /// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
 
-@import 'src/style/helpers/specs';
+/// responsive sizes
+$max-mobile-width-value: 768;
+$max-mobile-width: to-px($max-mobile-width-value);
+
+$min-tablet-width-value: $max-mobile-width-value + 1;
+$min-tablet-width: to-px($min-tablet-width-value);
+$max-tablet-width-value: 1023;
+$max-tablet-width: to-px($max-tablet-width-value);
+
+$min-desktop-width-value: $max-tablet-width-value + 1;
+$min-desktop-width: to-px($min-desktop-width-value);
+$max-desktop-width-value: 1215;
+$max-desktop-width: to-px($max-desktop-width-value);
+
+$min-widescreen-width-value: $max-desktop-width-value + 1;
+$min-widescreen-width: to-px($min-widescreen-width-value);
+$max-widescreen-width-value: 1407;
+$max-widescreen-width: to-px($max-widescreen-width-value);
+
+$min-fullhd-width-value: $max-widescreen-width-value + 1;
+$min-fullhd-width: to-px($min-fullhd-width-value);
 
 @mixin is-mobile() {
-  @media all and (max-width: $max-mobile-width) {
+  @media (max-width: $max-mobile-width) {
     @content;
   }
 }
 
 @mixin is-tablet() {
-  @media all and (min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
+  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
     @content;
   }
 }
 
 @mixin is-lte-tablet() {
-  @media all and (max-width: $max-mobile-width) {
+  @media (max-width: $max-mobile-width) {
     @content;
   }
 }
 
 @mixin is-gte-tablet() {
-  @media all and (min-width: $min-desktop-width) {
+  @media (min-width: $min-desktop-width) {
     @content;
   }
 }
 
 @mixin is-desktop() {
-  @media all and (min-width: $min-desktop-width) and (max-width: $max-desktop-width) {
+  @media (min-width: $min-desktop-width) and (max-width: $max-desktop-width) {
     @content;
   }
 }
 
 @mixin is-lte-desktop() {
-  @media all and (max-width: $max-tablet-width) {
+  @media (max-width: $max-tablet-width) {
     @content;
   }
 }
 
 @mixin is-gte-desktop() {
-  @media all and (min-width: $min-widescreen-width) {
+  @media (min-width: $min-widescreen-width) {
     @content;
   }
 }
 
 @mixin is-widescreen() {
-  @media all and (min-width: $min-widescreen-width) and (max-width: $max-widescreen-width) {
+  @media (min-width: $min-widescreen-width) and (max-width: $max-widescreen-width) {
     @content;
   }
 }
 
 @mixin is-lte-widescreen() {
-  @media all and (max-width: $max-desktop-width) {
+  @media (max-width: $max-desktop-width) {
     @content;
   }
 }
 
 @mixin is-gte-widescreen() {
-  @media all and (min-width: $min-fullhd-width) {
+  @media (min-width: $min-fullhd-width) {
     @content;
   }
 }
 
 @mixin is-fullhd() {
-  @media all and (min-width: $min-fullhd-width) {
+  @media (min-width: $min-fullhd-width) {
     @content;
   }
 }
 
 @mixin is-lte-fullhd() {
-  @media all and (max-width: $max-widescreen-width) {
+  @media (max-width: $max-widescreen-width) {
     @content;
   }
 }
 
 @mixin is-portrait() {
-  @media all and (orientation: portrait) {
+  @media (orientation: portrait) {
     @content;
   }
 }
 
 @mixin is-landscape() {
-  @media all and (orientation: landscape) {
+  @media (orientation: landscape) {
     @content;
   }
+}
+
+@mixin is-hoverable {
+  @media (hover) {
+    @content;
+  }
+}
+
+@mixin prefers-light-scheme {
+  @media (prefers-color-scheme: light) {
+    @content;  
+  }  
+}
+
+@mixin prefers-dark-scheme {
+  @media (prefers-color-scheme: dark) {
+    @content;  
+  }  
 }

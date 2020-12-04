@@ -42,7 +42,7 @@ const rootFinder = {
  * @property {string} replacement The replacement value.
  */
 const srcFinder = { 
-  find: /^@\/(.+)$/, 
+  find: /^@\/(.+)/, 
   replacement: path.resolve(__dirname, 'src/$1') 
 }
 

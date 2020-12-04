@@ -4,28 +4,6 @@
 @import 'src/style/helpers/spacing';
 @import 'src/style/helpers/conversion';
 
-/// responsive sizes
-$max-mobile-width-value: 768;
-$max-mobile-width: to-px($max-mobile-width-value);
-
-$min-tablet-width-value: $max-mobile-width-value + 1;
-$min-tablet-width: to-px($min-tablet-width-value);
-$max-tablet-width-value: 1023;
-$max-tablet-width: to-px($max-tablet-width-value);
-
-$min-desktop-width-value: $max-tablet-width-value + 1;
-$min-desktop-width: to-px($min-desktop-width-value);
-$max-desktop-width-value: 1215;
-$max-desktop-width: to-px($max-desktop-width-value);
-
-$min-widescreen-width-value: $max-desktop-width-value + 1;
-$min-widescreen-width: to-px($min-widescreen-width-value);
-$max-widescreen-width-value: 1407;
-$max-widescreen-width: to-px($max-widescreen-width-value);
-
-$min-fullhd-width-value: $max-widescreen-width-value + 1;
-$min-fullhd-width: to-px($min-fullhd-width-value);
-
 /// border
 $border-radius: .3rem;
 

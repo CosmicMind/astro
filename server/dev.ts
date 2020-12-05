@@ -1,18 +1,31 @@
 /// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 import cluster from 'cluster'
 import { cpus as getCPUs } from 'os'
 
-import { createServer } from '#/server/createServer'
-import { createRoutes } from '#/server/createRoutes'
-import { createApp } from '#/server/createApp'
+import { 
+  createServer,
+  createRoutes,
+  createApp,
+} from '$/composition'
+
+/**
+ * Tells the ports matching to begin at the defined ports range.
+ */
+const CM_PORTS_RANGE_START = process.env.CM_PORTS_RANGE_START
+if ('undefined' === typeof CM_PORTS_RANGE_START) throw new Error('CM_PORTS_RANGE_START missing from .env')
 
 const env = {
   timezone: process.env.CM_TZ || 'America/Toronto',
-  env: process.env.CM_ENV || 'dev',
+  env: process.env.CM_ENV || 'development',
   name: process.env.CM_NAME || 'API',
-  ports: 'string' === typeof process.env.CM_PORTS ? process.env.CM_PORTS.split(',') : getCPUs().map((_, i) => '300' + i),
+  ports: getCPUs().map((_, i) => CM_PORTS_RANGE_START + i),
   proxy: process.env.CM_PROXY || true,
+  public: process.env.CM_PUBLIC,
+  views: process.env.CM_VIEWS,
 }
 
 if (cluster.isWorker) {

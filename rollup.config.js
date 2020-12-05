@@ -19,7 +19,7 @@ import { terser } from 'rollup-plugin-terser'
  */
 const libFinder = { 
   find: /^\$\/(.+)$/, 
-  replacement: path.resolve(__dirname, '../$1/dist/lib/lib.esm.js') 
+  replacement: path.resolve(__dirname, '../$1/dist/lib/lib.esm.mjs') 
 }
 
 /**
@@ -101,6 +101,7 @@ const vueConfig = {}
  * External libraries that are avoided in the build process by `rollup`.
  */
 const external = [
+  'dotenv',
   'cluster', 
   'os',
   'http',
@@ -139,30 +140,17 @@ export default [
   },
 
   {
-    input: 'app/style/lib.scss',
-    output: {
-      file: 'dist/app/lib.esm.css',
-    },
-    plugins: [
-      postcss({
-        extract: true,
-        minimize: true,
-      })
-    ]
-  },
-
-  {
     input: 'app/main.ts',
     output: [
       {
         name: 'app',
-        file: 'dist/app/app.esm.js',
+        file: 'dist/public/app.esm.js',
         format: 'es',
         sourcemap: true,
       },
       {
         name: 'app',
-        file: 'dist/app/app.min.esm.js',
+        file: 'dist/public/app.min.esm.js',
         format: 'es',
         sourcemap: false,
         plugins: [
@@ -176,7 +164,7 @@ export default [
       json(),
       pug(),
       postcss({
-        extract: 'app.esm.css',
+        extract: 'app.css',
         minimize: true,
       }),
       typescript(tsConfig)
@@ -192,17 +180,17 @@ export default [
   },
 
   {
-    input: 'server/web.ts',
+    input: 'server/dev.ts',
     output: [
       {
-        name: 'web',
-        file: `dist/server/web.esm.mjs`,
+        name: 'dev',
+        file: `dist/server/dev.esm.mjs`,
         format: 'es',
         sourcemap: true,
       },
       {
-        name: 'web',
-        file: `dist/server/web.min.esm.mjs`,
+        name: 'prod',
+        file: `dist/server/prod.esm.mjs`,
         format: 'es',
         sourcemap: false,
         plugins: [

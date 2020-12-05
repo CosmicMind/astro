@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "CosmicMind application.",
   "private": true,
-  "main": "index.ts",
   "dependencies": {
     "grapheme-splitter": "^1.0.4"
   },
@@ -19,6 +18,7 @@
     "@vue/compiler-sfc": "^3.0.2",
     "ava": "^3.13.0",
     "d3": "^6.2.0",
+    "dotenv": "^8.2.0",
     "koa": "^2.13.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.3.1",
@@ -42,7 +42,8 @@
     "build:dev": "rollup -c rollup.config.js",
     "watch:dev": "rollup -c rollup.config.js -w",
     "build:prod": "rollup -c rollup.config.js",
-    "web": "node dist/server/web.esm.mjs"
+    "watch:prod": "rollup -c rollup.config.js -w",
+    "dev": "node dist/server/dev.esm.mjs"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,13 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
+<!-- 
+// @import '../composition/src/style/composites/_tools';
+
+.main {
+  // background-color: hex-to-rgba(#889977);
+}
+-->
+
 <template lang='pug'>
 
 nav.app-nav.navbar
@@ -37,10 +45,5 @@ export default {
 </script>
 
 <style lang='scss'>
-@import 'src/style/helpers/tools';
-
-.main {
-  background-color: hex-to-rgba(#889977);
-}
 
 </style>

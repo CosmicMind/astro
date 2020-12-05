@@ -22,7 +22,7 @@
     "baseUrl": ".",
     "paths": {
       "$/*": [
-        "../*"
+        "../*/dist/lib/lib.esm.mjs"
       ],
       "#/*": [
         "./*"
@@ -34,13 +34,11 @@
   },
   "references": [
     { "path": "../foundation" },
-    { "path": "../rocket" },
-    { "path": "../focus" }
+    { "path": "../composition" }
   ],
   "files": [
-    "../foundation/index.ts",
-    "../rocket/index.ts",
-    "../focus/index.ts"
+    "../foundation/dist/lib/lib.esm.mjs",
+    "../composition/dist/lib/lib.esm.mjs"
   ],
   "include": [
     "*.ts",

@@ -1,7 +1,7 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <!-- 
-// @import '../composition/src/style/composites/_tools';
+// @import '../composition/lib/style/composites/_tools';
 
 .main {
   // background-color: hex-to-rgba(#889977);
@@ -45,5 +45,10 @@ export default {
 </script>
 
 <style lang='scss'>
+@import 'composites/_tools';
+
+.main {
+  background-color: hex-to-rgba(#776655);
+}
 
 </style>

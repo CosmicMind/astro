@@ -19,7 +19,7 @@ import { terser } from 'rollup-plugin-terser'
  */
 const libFinder = { 
   find: /^\$\/(.+)$/, 
-  replacement: path.resolve(__dirname, '../$1/dist/lib/lib.esm.mjs') 
+  replacement: path.resolve(__dirname, '../$1') 
 }
 
 /**
@@ -31,7 +31,7 @@ const libFinder = {
  */
 const rootFinder = { 
   find: /^#\/(.+)$/, 
-  replacement: path.resolve(__dirname, '$1') 
+  replacement: path.resolve(__dirname, '$1'),
 }
 
 /**
@@ -42,8 +42,8 @@ const rootFinder = {
  * @property {string} replacement The replacement value.
  */
 const srcFinder = { 
-  find: /^@\/(.+)/, 
-  replacement: path.resolve(__dirname, 'src/$1') 
+  find: /^@\/(.+)$/, 
+  replacement: path.resolve(__dirname, 'src/$1'),
 }
 
 /**
@@ -53,7 +53,7 @@ const srcFinder = {
  */
 const vueFinder = { 
   find: 'vue', 
-  replacement: path.resolve(__dirname, 'node_modules/vue/dist/vue.runtime.esm-browser.js') 
+  replacement: path.resolve(__dirname, 'node_modules/vue/dist/vue.runtime.esm-browser.js'),
 }
 
 /**
@@ -62,12 +62,14 @@ const vueFinder = {
  * @property {Array<string>} resolve Files included in the search and replace of matched entries.
  * @property {Array<{find: string|RegExp, replacement: string}} entries Find and replace patterns.
  */
-const aliasConfig = {
-  resolve: [ 
+ const aliasConfig = {
+  resolve: [
+    '.json',
+    '.mjs', 
     '.js', 
-    '.ts',
-    '.scss',
-    '.vue'
+    '.vue',
+    '.sass', 
+    '.scss'
   ],
   entries: [
     libFinder,
@@ -120,7 +122,7 @@ export default [
     output: [
       {
         name: 'tests',
-        file: `dist/tests/tests.esm.mjs`,
+        file: path.resolve(__dirname, 'dist/tests/tests.esm.mjs'),
         format: 'es',
         sourcemap: true,
       }
@@ -140,17 +142,36 @@ export default [
   },
 
   {
+    input: 'lib/index.scss',
+    output: {
+      file: path.resolve(__dirname, 'dist/public/lib.css'),
+    },
+    plugins: [
+      alias(aliasConfig),
+      postcss({
+        extract: true,
+        minimize: true,
+        use: [
+          ['sass', {
+            includePaths: [ path.resolve(__dirname, '../composition/lib/style') ],
+          }]
+        ],
+      })
+    ]
+  },
+
+  {
     input: 'app/main.ts',
     output: [
       {
         name: 'app',
-        file: 'dist/public/app.esm.js',
+        file: path.resolve(__dirname, 'dist/public/app.esm.js'),
         format: 'es',
         sourcemap: true,
       },
       {
         name: 'app',
-        file: 'dist/public/app.min.esm.js',
+        file: path.resolve(__dirname, 'dist/public/app.min.esm.js'),
         format: 'es',
         sourcemap: false,
         plugins: [
@@ -164,8 +185,13 @@ export default [
       json(),
       pug(),
       postcss({
-        extract: 'app.css',
+        extract: path.resolve(__dirname, 'dist/public/app.css'),
         minimize: true,
+        use: [
+          ['sass', {
+            includePaths: [ path.resolve(__dirname, '../composition/lib/style') ],
+          }]
+        ],
       }),
       typescript(tsConfig)
     ],
@@ -180,18 +206,18 @@ export default [
   },
 
   {
-    input: 'server/dev.ts',
+    input: 'server/server.ts',
     output: [
       {
         name: 'dev',
-        file: `dist/server/dev.esm.mjs`,
-        format: 'es',
+        file: path.resolve(__dirname, 'dist/server/dev.esm.mjs'),
+        format: 'esm',
         sourcemap: true,
       },
       {
         name: 'prod',
-        file: `dist/server/prod.esm.mjs`,
-        format: 'es',
+        file: path.resolve(__dirname, 'dist/server/prod.esm.mjs'),
+        format: 'esm',
         sourcemap: false,
         plugins: [
           terser()

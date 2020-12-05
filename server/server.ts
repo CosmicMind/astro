@@ -6,11 +6,9 @@ dotenv.config()
 import cluster from 'cluster'
 import { cpus as getCPUs } from 'os'
 
-import { 
-  createServer,
-  createRoutes,
-  createApp,
-} from '$/composition'
+import { createServer } from '#/server/createServer'
+import { createRoutes } from '#/server/createRoutes'
+import { createApp } from '#/server/createApp'
 
 /**
  * Tells the ports matching to begin at the defined ports range.

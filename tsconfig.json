@@ -22,7 +22,7 @@
     "baseUrl": ".",
     "paths": {
       "$/*": [
-        "../*/dist/lib/lib.esm.mjs"
+        "../*"
       ],
       "#/*": [
         "./*"
@@ -37,8 +37,11 @@
     { "path": "../composition" }
   ],
   "files": [
-    "../foundation/dist/lib/lib.esm.mjs",
-    "../composition/dist/lib/lib.esm.mjs"
+    "../foundation/index.ts",
+    "../composition/index.ts",
+    "../composition/server/createServer.ts",
+    "../composition/server/createRoutes.ts",
+    "../composition/server/createApp.ts"
   ],
   "include": [
     "*.ts",

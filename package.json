@@ -10,6 +10,7 @@
     "@koa/router": "^10.0.0",
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
     "@types/d3": "^6.2.0",
     "@types/koa": "^2.11.6",
     "@types/koa-static": "^4.0.1",
@@ -39,11 +40,12 @@
     "install": "sudo npm install --arch=x64 --platform=linux",
     "test": "ava",
     "watch:test": "npx ava --watch",
+    "dev": "node dist/server/dev.esm.mjs",
     "build:dev": "rollup -c rollup.config.js",
     "watch:dev": "rollup -c rollup.config.js -w",
+    "prod": "node dist/server/prod.esm.mjs",
     "build:prod": "rollup -c rollup.config.js",
-    "watch:prod": "rollup -c rollup.config.js -w",
-    "dev": "node dist/server/dev.esm.mjs"
+    "watch:prod": "rollup -c rollup.config.js -w"
   },
   "repository": {
     "type": "git",

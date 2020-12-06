@@ -17,6 +17,7 @@ import {
   aliasConfig,
   tsConfig,
   vueConfig,
+  compositionStyleDir,
 } from '../rollup'
 
 /**
@@ -74,7 +75,7 @@ export default [
         minimize,
         use: [
           ['sass', {
-            includePaths: [ path.resolve(__dirname, '../composition/lib/style') ],
+            includePaths: [ compositionStyleDir ],
           }]
         ],
       })
@@ -102,7 +103,7 @@ export default [
         minimize,
         use: [
           ['sass', {
-            includePaths: [ path.resolve(__dirname, '../composition/lib/style') ],
+            includePaths: [ compositionStyleDir ],
           }]
         ],
       }),

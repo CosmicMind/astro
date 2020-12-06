@@ -10,9 +10,9 @@ import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
 
-const isProd = 'development' === typeof process.env.CM_ENV
+const isProd = 'development' !== typeof process.env.CM_ENV
 const sourcemap = !isProd
-const plugins = isProd ? [ terser ] : []
+const plugins = isProd ? [ terser() ] : []
 const minimize = isProd
 const server = isProd ? 'prod' : 'dev'
 
@@ -171,7 +171,7 @@ export default [
     output: [
       {
         name: 'app',
-        file: path.resolve(__dirname, 'dist/public/app.esm.js'),
+        file: path.resolve(__dirname, 'dist/public/app.esm.mjs'),
         format: 'es',
         sourcemap,
         plugins,

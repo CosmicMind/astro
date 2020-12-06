@@ -13,8 +13,6 @@ import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
 
-console.log(process.env.CM_ENV)
-
 const isProd = 'development' !== process.env.CM_ENV
 const sourcemap = !isProd
 const plugins = isProd ? [ terser() ] : []

@@ -38,10 +38,7 @@
   ],
   "files": [
     "../foundation/index.ts",
-    "../composition/index.ts",
-    "../composition/server/createServer.ts",
-    "../composition/server/createRoutes.ts",
-    "../composition/server/createApp.ts"
+    "../composition/index.ts"
   ],
   "include": [
     "*.ts",

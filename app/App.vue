@@ -25,10 +25,10 @@ import {
 } from 'vue'
 
 import { Optional } from '$/foundation'
-import { default as SuspenseVue } from '$/composition/lib/vue/container/SuspenseVue.vue'
+import SuspenseVue from '$/composition/lib/vue/container/SuspenseVue.vue'
 
 export default {
-  name: 'Astro',
+  name: 'App',
 
   components: {
     SuspenseVue,

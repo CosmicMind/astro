@@ -1,5 +1,8 @@
 /// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 import path from 'path'
 
 import alias from '@rollup/plugin-alias'
@@ -10,7 +13,9 @@ import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
 
-const isProd = 'development' !== typeof process.env.CM_ENV
+console.log(process.env.CM_ENV)
+
+const isProd = 'development' !== process.env.CM_ENV
 const sourcemap = !isProd
 const plugins = isProd ? [ terser() ] : []
 const minimize = isProd

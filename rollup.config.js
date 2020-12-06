@@ -32,9 +32,7 @@ const external = [
   '@koa/router',
   'koa-views',
   'koa-static',
-  'ava',
-  'grapheme-splitter',
-  'd3'
+  'ava'
 ]
 
 export default [

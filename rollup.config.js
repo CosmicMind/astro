@@ -10,6 +10,12 @@ import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
 
+const isProd = 'development' === typeof process.env.CM_ENV
+const sourcemap = !isProd
+const plugins = isProd ? [ terser ] : []
+const minimize = isProd
+const server = isProd ? 'prod' : 'dev'
+
 /**
  * The `/^\$(.+)$/` pattern matches the dynamic imports from the `$1/index` (../) directory.
  * In the `tsconfig.json` file, there is a corresponding entry in the `paths`
@@ -123,7 +129,8 @@ export default [
         name: 'tests',
         file: path.resolve(__dirname, 'dist/tests/tests.esm.mjs'),
         format: 'es',
-        sourcemap: true,
+        sourcemap,
+        plugins,
       }
     ],
     plugins: [
@@ -134,9 +141,9 @@ export default [
     external,
     watch: {
       include: [ 
-        'tests/**'
+        path.resolve(__dirname, 'tests/**')
       ],
-      exclude: 'node_modules/**'
+      exclude: path.resolve(__dirname, 'node_modules/**'),
     },
   },
 
@@ -149,7 +156,7 @@ export default [
       alias(aliasConfig),
       postcss({
         extract: true,
-        minimize: true,
+        minimize,
         use: [
           ['sass', {
             includePaths: [ path.resolve(__dirname, '../composition/lib/style') ],
@@ -166,16 +173,8 @@ export default [
         name: 'app',
         file: path.resolve(__dirname, 'dist/public/app.esm.js'),
         format: 'es',
-        sourcemap: true,
-      },
-      {
-        name: 'app',
-        file: path.resolve(__dirname, 'dist/public/app.min.esm.js'),
-        format: 'es',
-        sourcemap: false,
-        plugins: [
-          terser()
-        ],
+        sourcemap,
+        plugins,
       },
     ],
     plugins: [
@@ -185,7 +184,7 @@ export default [
       pug(),
       postcss({
         extract: path.resolve(__dirname, 'dist/public/app.css'),
-        minimize: true,
+        minimize,
         use: [
           ['sass', {
             includePaths: [ path.resolve(__dirname, '../composition/lib/style') ],
@@ -197,10 +196,10 @@ export default [
     external,
     watch: {
       include: [ 
-        'src/**',
-        'app/**'
+        path.resolve(__dirname, 'src/**'),
+        path.resolve(__dirname, 'app/**')
       ],
-      exclude: 'node_modules/**'
+      exclude: path.resolve(__dirname, 'node_modules/**'),
     },
   },
 
@@ -208,20 +207,12 @@ export default [
     input: 'server/server.ts',
     output: [
       {
-        name: 'dev',
+        name: server,
         file: path.resolve(__dirname, 'dist/server/dev.esm.mjs'),
-        format: 'esm',
-        sourcemap: true,
+        format: 'es',
+        sourcemap,
+        plugins,
       },
-      {
-        name: 'prod',
-        file: path.resolve(__dirname, 'dist/server/prod.esm.mjs'),
-        format: 'esm',
-        sourcemap: false,
-        plugins: [
-          terser()
-        ],
-      }
     ],
     plugins: [
       alias(aliasConfig),
@@ -231,9 +222,9 @@ export default [
     external,
     watch: {
       include: [ 
-        'server/**'
+        path.resolve(__dirname, 'server/**')
       ],
-      exclude: 'node_modules/**'
+      exclude: path.resolve(__dirname, 'node_modules/**'),
     },
   }
 ]

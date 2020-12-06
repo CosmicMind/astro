@@ -1,21 +1,17 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<!-- 
-// @import '../composition/lib/style/tools';
-
-.main {
-  // background-color: hex-to-rgba(#889977);
-}
--->
-
 <template lang='pug'>
+suspense-vue
+  template(#default='')
+    nav.app-nav.navbar
 
-nav.app-nav.navbar
-
-main.app-main.main
-  article.app-article.article
-    h1 Title
-    p Title
+    main.app-main.main
+      article.app-article.article
+        h1 Title
+        p Title
+  
+  template(#fallback='')
+    p fallback
 
 </template>
 
@@ -28,16 +24,22 @@ import {
   computed,
 } from 'vue'
 
+import { Optional } from '$/foundation'
+import { default as SuspenseVue } from '$/composition/lib/vue/container/SuspenseVue.vue'
+
 export default {
-  name: 'App',
+  name: 'Astro',
 
   components: {
-    
+    SuspenseVue,
   },
 
   setup() {
+    let y: Optional<number>
+    y = 33
+    console.log('YYY', y)
     return { 
-      
+      y,
     }
   },
 }
@@ -48,7 +50,7 @@ export default {
 @import 'tools/_dev';
 
 .main {
-  background-color: hex-to-rgba(#776655);
+  background-color: hex-to-rgba(#990000);
 }
 
 </style>

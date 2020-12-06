@@ -68,7 +68,6 @@ const vueFinder = {
     '.mjs', 
     '.js', 
     '.vue',
-    '.sass', 
     '.scss'
   ],
   entries: [

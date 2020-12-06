@@ -1,23 +1,8 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "strict": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "target": "esnext",
-    "noImplicitReturns": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
     "declarationDir": "dist/types",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
     "rootDir": "..",
     "baseUrl": ".",
     "paths": {

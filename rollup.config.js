@@ -208,7 +208,7 @@ export default [
     output: [
       {
         name: server,
-        file: path.resolve(__dirname, 'dist/server/dev.esm.mjs'),
+        file: path.resolve(__dirname, 'dist/server/server.esm.mjs'),
         format: 'es',
         sourcemap,
         plugins,

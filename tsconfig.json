@@ -13,16 +13,12 @@
     "../composition/index.ts"
   ],
   "include": [
-    "*.ts",
-    "**/*.ts"
+    "**/*.ts",
+    "**/*.vue"
   ],
   "exclude": [
     "dist",
     "node_modules",
     "*.config.js"
-  ],
-  "typeRoots": [
-    "node_modules/@types",
-    "typings"
   ]
 }

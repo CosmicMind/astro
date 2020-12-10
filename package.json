@@ -37,8 +37,8 @@
     "install:linux": "sudo npm install --arch=x64 --platform=linux",
     "test": "ava",
     "watch:test": "npx ava --watch",
-    "build": "rollup -c rollup.config.js",
-    "watch": "rollup -c rollup.config.js -w",
+    "build": "rollup -c",
+    "watch": "rollup -cw",
     "server": "node dist/server/server.esm.mjs"
   },
   "repository": {

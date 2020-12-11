@@ -62,7 +62,7 @@ export default [
   },
 
   {
-    input: 'lib/index.scss',
+    input: 'lib/scss/index.scss',
     output: {
       file: path.resolve(__dirname, 'dist/public/lib.css'),
     },

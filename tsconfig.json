@@ -19,5 +19,9 @@
   "exclude": [
     "dist",
     "node_modules"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
+    "typings"
   ]
 }

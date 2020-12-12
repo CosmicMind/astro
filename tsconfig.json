@@ -2,15 +2,22 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "declarationDir": "dist/types",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "$/*": [
+        "../*"
+      ],
+      "#/*": [
+        "./*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "references": [
-    { "path": "../foundation" },
-    { "path": "../composition" }
-  ],
-  "files": [
-    "../foundation/index.ts",
-    "../composition/index.ts"
+    { "path": "../foundation/dist" },
+    { "path": "../composition/dist" }
   ],
   "include": [
     "**/*.ts",

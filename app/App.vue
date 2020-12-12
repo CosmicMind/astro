@@ -45,9 +45,7 @@ import {
   defineComponent,
 } from 'vue'
 
-import {
-  Optional
-} from '$/foundation'
+import { Optional } from '$/foundation'
 
 import {
   SuspenseVue,

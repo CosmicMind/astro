@@ -20,7 +20,7 @@ export function createRoutes(env: any, app: any) {
         'app.css'
       ],
       scripts: [
-        'app.esm.js'
+        'app.js'
       ],
 
       title: options.title,

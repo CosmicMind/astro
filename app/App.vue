@@ -5,7 +5,7 @@ suspense-vue
   template(v-slot:default='')
     composite-search-bar
       template(v-slot:title='{ title }')
-        h1 {{ title }}
+        h1 {{ title }} This is great
 
     composite-drawer
       p Drawer
@@ -80,7 +80,7 @@ export default defineComponent({
     let y: Optional<number>
     y = 3
     
-    // console.log(createGraph(), 3)
+    console.log(y)
     return {
       // graph: createGraph(),
     }

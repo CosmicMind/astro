@@ -3,9 +3,10 @@
   "compilerOptions": {
     "declarationDir": "dist/types",
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
       "$/*": [
-        "../*"
+        "../*/index.ts"
       ],
       "#/*": [
         "./*"
@@ -16,8 +17,12 @@
     }
   },
   "references": [
-    { "path": "../foundation/dist" },
-    { "path": "../composition/dist" }
+    { "path": "../foundation" },
+    { "path": "../composition" }
+  ],
+  "files": [
+    "../foundation/index.ts",
+    "../composition/index.ts"
   ],
   "include": [
     "**/*.ts",

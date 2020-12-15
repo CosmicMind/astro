@@ -85,7 +85,7 @@ export default [
     output: [
       {
         name: 'app',
-        file: path.resolve(__dirname, 'dist/public/app.esm.js'),
+        file: path.resolve(__dirname, 'dist/public/app.js'),
         format: 'esm',
         sourcemap,
         plugins,

@@ -3,31 +3,31 @@
 <template lang='pug'>
 suspense-vue
   template(v-slot:default='')
-    composite-search-bar
+    search-bar-vue
       template(v-slot:title='{ title }')
         h1 {{ title }} This is great
 
-    composite-drawer
+    drawer-vue
       p Drawer
 
-    composite-finder
+    finder-vue
       p Finder
 
-    composite-menu
+    menu-vue
       p Menu
 
-    composite-tools
+    tools-vue
       p Tools
 
-    composite-navbar
+    navbar-vue
       p Navbar
       button-vue
         p Button
 
-    composite-toolbar
+    toolbar-vue
       p Toolbar  
           
-    composite-main
+    main-vue
       p Main
   
   template(v-slot:fallback='')
@@ -49,14 +49,14 @@ import { Optional } from '$/foundation'
 
 import {
   SuspenseVue,
-  CompositeSearchBar,
-  CompositeDrawer,
-  CompositeNavbar,
-  CompositeToolbar,
-  CompositeFinder,
-  CompositeMenu,
-  CompositeTools,
-  CompositeMain,
+  SearchBarVue,
+  DrawerVue,
+  NavbarVue,
+  ToolbarVue,
+  FinderVue,
+  MenuVue,
+  ToolsVue,
+  MainVue,
   ButtonVue,
 } from '$/composition'
 
@@ -65,14 +65,14 @@ export default defineComponent({
 
   components: {
     SuspenseVue,
-    CompositeSearchBar,
-    CompositeDrawer,
-    CompositeNavbar,
-    CompositeToolbar,
-    CompositeFinder,
-    CompositeMenu,
-    CompositeTools,
-    CompositeMain,
+    SearchBarVue,
+    DrawerVue,
+    NavbarVue,
+    ToolbarVue,
+    FinderVue,
+    MenuVue,
+    ToolsVue,
+    MainVue,
     ButtonVue,
   },
 

@@ -1,51 +1,35 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-suspense-vue
-  template(v-slot:default='')
-    search-bar-vue
-      template(v-slot:title='{ title }')
-        h1 {{ title }} This is great
+#app.app(ref='app')
+  suspense-vue
+    template(v-slot:default='')
+      search-bar-vue(v-bind:toggle-active='toggleActive')
+        
+      drawer-vue(v-bind:toggle-active='toggleActive')
 
-    drawer-vue
-      p Drawer
+      finder-vue(v-bind:toggle-active='toggleActive')
 
-    finder-vue
-      p Finder
+      menu-vue(v-bind:toggle-active='toggleActive')
 
-    menu-vue
-      p Menu
+      tools-vue(v-bind:toggle-active='toggleActive')
 
-    tools-vue
-      p Tools
+      navbar-vue
 
-    navbar-vue
-      p Navbar
-      button-vue
-        p Button
-
-    toolbar-vue
-      p Toolbar  
+      toolbar-vue
           
-    main-vue
-      p Main
-  
-  template(v-slot:fallback='')
-    p Loading...
+      main-vue
+
+    template(v-slot:fallback='')
+      p Loading...
 
 </template>
 
 <script lang='ts'>
 import { 
   ref,
-  reactive,
-  watch,
-  toRefs,
-  computed,
   defineComponent,
 } from 'vue'
-
-import { Optional } from '$/foundation'
 
 import {
   SuspenseVue,
@@ -76,13 +60,17 @@ export default defineComponent({
     ButtonVue,
   },
 
-  setup() {
-    let y: Optional<number>
-    y = 3
-    
-    console.log(y)
+  setup(props: any, { attrs }) {
+    const app = ref(undefined)
+
+    const toggleActive = (className: string) => {
+      const el: any = app.value
+      if (el instanceof HTMLElement) el.classList.toggle(className)
+    }
+
     return {
-      // graph: createGraph(),
+      app,
+      toggleActive,
     }
   },
 })
@@ -97,6 +85,10 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+  @include theme() {
+    background-color: theme-style(primary-background);
+  }
 }
 
 body {
@@ -104,10 +96,6 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
-
-@include is-gte-tablet() {
-
 }
 
 </style>

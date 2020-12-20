@@ -20,6 +20,7 @@ export function createRoutes(env: any, app: any) {
         'app.css'
       ],
       scripts: [
+        'https://kit.fontawesome.com/8758c0b6e6.js',
         'app.js'
       ],
 

@@ -4,21 +4,21 @@
 #app.app(ref='app')
   suspense-vue
     template(v-slot:default='')
-      search-bar-vue(v-bind:toggle-active='toggleActive')
+      composite-search-bar-vue(v-bind:toggle-active='toggleActive')
         
-      drawer-vue(v-bind:toggle-active='toggleActive')
+      composite-drawer-vue(v-bind:toggle-active='toggleActive')
 
-      finder-vue(v-bind:toggle-active='toggleActive')
+      composite-finder-vue(v-bind:toggle-active='toggleActive')
 
-      menu-vue(v-bind:toggle-active='toggleActive')
+      composite-menu-vue(v-bind:toggle-active='toggleActive')
 
-      tools-vue(v-bind:toggle-active='toggleActive')
+      composite-tools-vue(v-bind:toggle-active='toggleActive')
 
-      navbar-vue
+      composite-navbar-vue
 
-      toolbar-vue
+      composite-toolbar-vue
           
-      main-vue
+      composite-main-vue
 
     template(v-slot:fallback='')
       p Loading...
@@ -33,14 +33,14 @@ import {
 
 import {
   SuspenseVue,
-  SearchBarVue,
-  DrawerVue,
-  NavbarVue,
-  ToolbarVue,
-  FinderVue,
-  MenuVue,
-  ToolsVue,
-  MainVue,
+  CompositeSearchBarVue,
+  CompositeDrawerVue,
+  CompositeNavbarVue,
+  CompositeToolbarVue,
+  CompositeFinderVue,
+  CompositeMenuVue,
+  CompositeToolsVue,
+  CompositeMainVue,
   ButtonVue,
 } from '$/composition'
 
@@ -49,14 +49,14 @@ export default defineComponent({
 
   components: {
     SuspenseVue,
-    SearchBarVue,
-    DrawerVue,
-    NavbarVue,
-    ToolbarVue,
-    FinderVue,
-    MenuVue,
-    ToolsVue,
-    MainVue,
+    CompositeSearchBarVue,
+    CompositeDrawerVue,
+    CompositeNavbarVue,
+    CompositeToolbarVue,
+    CompositeFinderVue,
+    CompositeMenuVue,
+    CompositeToolsVue,
+    CompositeMainVue,
     ButtonVue,
   },
 

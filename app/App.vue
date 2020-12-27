@@ -4,15 +4,15 @@
 #app.app(ref='app')
   suspense-vue
     template(v-slot:default='')
-      composite-search-bar-vue(v-bind:toggle-active='toggleActive')
+      composite-search-bar-vue(v-bind:toggle-state='toggleState')
         
-      composite-drawer-vue(v-bind:toggle-active='toggleActive')
+      composite-drawer-vue(v-bind:toggle-state='toggleState')
 
-      composite-finder-vue(v-bind:toggle-active='toggleActive')
+      composite-finder-vue(v-bind:toggle-state='toggleState')
 
-      composite-menu-vue(v-bind:toggle-active='toggleActive')
+      composite-menu-vue(v-bind:toggle-state='toggleState')
 
-      composite-tools-vue(v-bind:toggle-active='toggleActive')
+      composite-tools-vue(v-bind:toggle-state='toggleState')
 
       composite-navbar-vue
 
@@ -63,14 +63,14 @@ export default defineComponent({
   setup(props: any, { attrs }) {
     const app = ref(undefined)
 
-    const toggleActive = (className: string) => {
+    const toggleState = (className: string) => {
       const el: any = app.value
       if (el instanceof HTMLElement) el.classList.toggle(className)
     }
 
     return {
       app,
-      toggleActive,
+      toggleState,
     }
   },
 })

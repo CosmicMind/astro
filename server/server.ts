@@ -13,17 +13,17 @@ import { createApp } from '#/server/createApp'
 /**
  * Tells the ports matching to begin at the defined ports range.
  */
-const CM_PORTS_RANGE_START = process.env.CM_PORTS_RANGE_START
-if ('undefined' === typeof CM_PORTS_RANGE_START) throw new Error('CM_PORTS_RANGE_START missing from .env')
+const DE_PORTS_RANGE_START = process.env.DE_PORTS_RANGE_START
+if ('undefined' === typeof DE_PORTS_RANGE_START) throw new Error('DE_PORTS_RANGE_START missing from .env')
 
 const env = {
-  timezone: process.env.CM_TZ || 'America/Toronto',
-  env: process.env.CM_ENV || 'development',
-  name: process.env.CM_NAME || 'API',
-  ports: getCPUs().map((_, i) => CM_PORTS_RANGE_START + i),
-  proxy: process.env.CM_PROXY || true,
-  public: process.env.CM_PUBLIC,
-  views: process.env.CM_VIEWS,
+  timezone: process.env.DE_TZ || 'America/Toronto',
+  env: process.env.DE_ENV || 'development',
+  name: process.env.DE_NAME || 'API',
+  ports: getCPUs().map((_, i) => DE_PORTS_RANGE_START + i),
+  proxy: process.env.DE_PROXY || true,
+  public: process.env.DE_PUBLIC,
+  views: process.env.DE_VIEWS,
 }
 
 if (cluster.isWorker) {

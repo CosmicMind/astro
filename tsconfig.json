@@ -1,20 +1,9 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "declarationDir": "dist/types",
     "baseUrl": ".",
-    "outDir": "dist",
-    "paths": {
-      "$/*": [
-        "../*/index.ts"
-      ],
-      "#/*": [
-        "./*"
-      ],
-      "@/*": [
-        "src/*"
-      ]
-    }
+    "outDir": "dist"
   },
   "references": [
     { "path": "../foundation" },

@@ -2,9 +2,9 @@
 
 export default {
 	extensions: [
-    "mjs"
+    'mjs'
   ],
   require: [
-    "ts-node/register"
+    'ts-node/register'
   ]
 }

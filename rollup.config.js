@@ -42,7 +42,7 @@ export default [
       {
         name: 'tests',
         file: path.resolve(__dirname, 'dist/tests/tests.esm.mjs'),
-        format: 'esm',
+        format: 'es',
         sourcemap,
         plugins,
       }
@@ -86,7 +86,7 @@ export default [
       {
         name: 'app',
         file: path.resolve(__dirname, 'dist/public/app.js'),
-        format: 'esm',
+        format: 'es',
         sourcemap,
         plugins,
       },
@@ -123,7 +123,7 @@ export default [
       {
         name: server,
         file: path.resolve(__dirname, 'dist/server/server.esm.mjs'),
-        format: 'esm',
+        format: 'es',
         sourcemap,
         plugins,
       },

@@ -12,15 +12,15 @@ html(lang='en')
     each content, property in properties
       meta(property=property, content=content)
 
-    //- link(rel='icon', type='image/png', href='/favicon.png')
-    //- link(rel='shortcut icon', type='image/png', href='/favicon.png')
-    //- link(rel='apple-touch-icon', type='image/png', href='/favicon.png')
+    link(rel='icon', type='image/png', href='/favicon.png')
+    link(rel='shortcut icon', type='image/png', href='/favicon.png')
+    link(rel='apple-touch-icon', type='image/png', href='/favicon.png')
     
     title=title
 
-    each style in styles
-      link(rel='stylesheet', type='text/css', media='all', href=style)
+    each x in styles
+      link(rel=x.rel, type=x.type, media=x.media, href=x.href)
 
-  body  
-    each script in scripts
-      script(src=script, defer)
+  body#mount
+    each x in scripts
+      script(type=x.type, src=x.src, defer=x.defer)

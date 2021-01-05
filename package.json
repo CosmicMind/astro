@@ -4,9 +4,6 @@
   "description": "CosmicMind application.",
   "private": true,
   "types": "dist/types/astro/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "dependencies": {},
   "devDependencies": {
     "@koa/router": "^10.0.0",

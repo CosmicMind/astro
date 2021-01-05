@@ -1,20 +1,23 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "composite": true,
+    "rootDir": "..",
     "declarationDir": "dist/types",
     "baseUrl": ".",
     "outDir": "dist"
   },
   "references": [
-    { "path": "../foundation" },
-    { "path": "../composition" }
+    { "path": "../foundation/tsconfig.json" },
+    { "path": "../composition/tsconfig.json" }
   ],
   "files": [
-    "../foundation/index.ts",
-    "../composition/index.ts"
+    "../foundation/dist/lib/lib.esm.js",
+    "../composition/dist/lib/lib.esm.js"
   ],
   "include": [
     "**/*.ts",
+    "**/*.json",
     "**/*.vue"
   ],
   "exclude": [
@@ -22,7 +25,7 @@
     "node_modules"
   ],
   "typeRoots": [
-    "node_modules/@types",
-    "typings"
+    "typings",
+    "../node_modules/@types"
   ]
 }

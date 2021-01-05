@@ -1,24 +1,17 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-#app.app(ref='app')
+#app-vue.app-vue(ref='appVue')
   suspense-vue
     template(v-slot:default='')
-      composite-search-bar-vue(v-bind:toggle-state='toggleState')
-        
-      composite-drawer-vue(v-bind:toggle-state='toggleState')
-
-      composite-finder-vue(v-bind:toggle-state='toggleState')
-
-      composite-menu-vue(v-bind:toggle-state='toggleState')
-
-      composite-tools-vue(v-bind:toggle-state='toggleState')
-
-      composite-navbar-vue
-
-      composite-toolbar-vue
-          
-      composite-main-vue
+      router-view(name='search-bar', v-bind:toggle-state='toggleState')
+      router-view(name='navbar', v-bind:toggle-state='toggleState')
+      router-view(name='toolbar', v-bind:toggle-state='toggleState')
+      router-view(name='drawer', v-bind:toggle-state='toggleState')
+      router-view(name='finder', v-bind:toggle-state='toggleState')
+      router-view(name='menu', v-bind:toggle-state='toggleState')
+      router-view(name='tools', v-bind:toggle-state='toggleState')
+      router-view(name='main', v-bind:toggle-state='toggleState')
 
     template(v-slot:fallback='')
       p Loading...
@@ -28,48 +21,31 @@
 <script lang='ts'>
 import { 
   ref,
-  defineComponent,
+  defineComponent, 
 } from 'vue'
 
-import {
-  SuspenseVue,
-  CompositeSearchBarVue,
-  CompositeDrawerVue,
-  CompositeNavbarVue,
-  CompositeToolbarVue,
-  CompositeFinderVue,
-  CompositeMenuVue,
-  CompositeToolsVue,
-  CompositeMainVue,
-  ButtonVue,
-} from '$/composition'
+import { SuspenseVue } from '$/composition'
 
 export default defineComponent({
-  name: 'Astro',
+  name: 'App',
 
   components: {
     SuspenseVue,
-    CompositeSearchBarVue,
-    CompositeDrawerVue,
-    CompositeNavbarVue,
-    CompositeToolbarVue,
-    CompositeFinderVue,
-    CompositeMenuVue,
-    CompositeToolsVue,
-    CompositeMainVue,
-    ButtonVue,
   },
 
-  setup(props: any, { attrs }) {
-    const app = ref(undefined)
-
-    const toggleState = (className: string) => {
-      const el: any = app.value
-      if (el instanceof HTMLElement) el.classList.toggle(className)
+  setup() {
+    const appVue = ref(null)
+    
+    const toggleState = (className: string, onOff?: boolean) => {
+      const el: any = appVue.value
+      if (el instanceof HTMLElement) 
+        if (false === onOff) el.classList.remove(className) 
+        else if (true === onOff) el.classList.add(className)
+        else el.classList.toggle(className)
     }
 
     return {
-      app,
+      appVue,
       toggleState,
     }
   },
@@ -95,7 +71,7 @@ body {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 </style>

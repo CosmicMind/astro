@@ -22,13 +22,14 @@ const env = {
   name: process.env.DE_NAME || 'API',
   ports: getCPUs().map((_, i) => DE_PORTS_RANGE_START + i),
   proxy: process.env.DE_PROXY || true,
+  assets: process.env.DE_ASSETS,
   public: process.env.DE_PUBLIC,
   views: process.env.DE_VIEWS,
 }
 
 if (cluster.isWorker) {
   const app = createApp(env)
-  createRoutes(env, app)
+  createRoutes(app)
   createServer(env.ports, app)
 }
 else {

@@ -32,6 +32,7 @@ const external = [
   '@koa/router',
   'koa-views',
   'koa-static',
+  'keygrip',
   'ava'
 ]
 

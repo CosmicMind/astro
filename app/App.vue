@@ -13,6 +13,7 @@
       router-view(name='tools', v-bind:toggle-state='toggleState')
       router-view(name='main', v-bind:toggle-state='toggleState')
 
+      composite-modal-vue(v-bind:toggle-state='toggleState')
     template(v-slot:fallback='')
       p Loading...
 
@@ -24,13 +25,17 @@ import {
   defineComponent, 
 } from 'vue'
 
-import { SuspenseVue } from '$/composition'
+import { 
+  SuspenseVue, 
+  CompositeModalVue,
+} from '$/composition'
 
 export default defineComponent({
   name: 'App',
 
   components: {
     SuspenseVue,
+    CompositeModalVue,
   },
 
   setup() {

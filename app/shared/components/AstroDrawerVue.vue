@@ -2,7 +2,7 @@
 
 <template lang='pug'>
 composite-drawer-vue(v-bind:toggle-state='toggleState')
-  aside.dashboard-drawer-vue
+  aside.astro-drawer-vue
     nav.navbar
       .navbar-end
         .navbar-item
@@ -96,7 +96,7 @@ import {
 } from '$/composition'
 
 export default defineComponent({
-  name: 'DashboardDrawerVue',
+  name: 'AstroDrawerVue',
 
   components: {
     CompositeDrawerVue,
@@ -195,7 +195,7 @@ export default defineComponent({
 <style lang='scss'>
 @import 'tools/_dev';
 
-.dashboard-drawer-vue {
+.astro-drawer-vue {
   position: absolute;
   top: 0;
   left: 0;

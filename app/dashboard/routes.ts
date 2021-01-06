@@ -2,7 +2,7 @@
 
 import { RouteRecordRaw } from 'vue-router'
 
-import { CompositeDrawerVue } from '$/composition'
+import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
 
 import DashboardSearchBarVue from '#/app/dashboard/components/DashboardSearchBarVue.vue'
 import DashboardMainVue from '#/app/dashboard/components/DashboardMainVue.vue'
@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/',
 		components: {
 			'search-bar': DashboardSearchBarVue,
-			'drawer': CompositeDrawerVue,
+			'drawer': AstroDrawerVue,
 			'main': DashboardMainVue,
 		},
 		props: true,

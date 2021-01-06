@@ -9,10 +9,12 @@
   },
   "references": [
     { "path": "../foundation/tsconfig.json" },
+    { "path": "../aurora/tsconfig.json" },
     { "path": "../composition/tsconfig.json" }
   ],
   "files": [
     "../foundation/dist/lib/lib.esm.js",
+    "../aurora/dist/lib/lib.esm.js",
     "../composition/dist/lib/lib.esm.js"
   ],
   "include": [

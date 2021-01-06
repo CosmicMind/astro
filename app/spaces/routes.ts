@@ -2,7 +2,7 @@
 
 import { RouteRecordRaw } from 'vue-router'
 
-import { CompositeDrawerVue } from '$/composition'
+import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
 
 import SpacesSearchBarVue from '#/app/spaces/components/SpacesSearchBarVue.vue'
 import SpacesMainVue from '#/app/spaces/components/SpacesMainVue.vue'
@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/spaces/:spaceId',
 		components: {
 			'search-bar': SpacesSearchBarVue,
-			'drawer': CompositeDrawerVue,
+			'drawer': AstroDrawerVue,
 			'main': SpacesMainVue,
 		},
 		props: true,

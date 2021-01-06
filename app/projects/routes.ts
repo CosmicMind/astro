@@ -2,7 +2,7 @@
 
 import { RouteRecordRaw } from 'vue-router'
 
-import { CompositeDrawerVue } from '$/composition'
+import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
 
 import ProjectsSearchBarVue from '#/app/projects/components/ProjectsSearchBarVue.vue'
 import ProjectsMainVue from '#/app/projects/components/ProjectsMainVue.vue'
@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/projects/:projectId',
 		components: {
 			'search-bar': ProjectsSearchBarVue,
-			'drawer': CompositeDrawerVue,
+			'drawer': AstroDrawerVue,
 			'main': ProjectsMainVue,
 		},
 		props: true,

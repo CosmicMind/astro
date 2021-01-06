@@ -22,6 +22,7 @@
     "koa-static": "^5.0.0",
     "koa-views": "^7.0.0",
     "node-sass": "^5.0.0",
+    "postcss": "^8.2.2",
     "pug": "^3.0.0",
     "rollup": "^2.35.1",
     "rollup-plugin-postcss": "^4.0.0",
@@ -32,10 +33,11 @@
     "ts-node": "^9.1.1",
     "tslib": "^2.0.3",
     "typescript": "^4.1.3",
-    "vue": "^3.0.3"
+    "vue": "^3.0.3",
+    "vue-router": "^4.0.2"
   },
   "scripts": {
-    "install:linux": "sudo npm install --arch=x64 --platform=linux",
+    "install:linux": "npm install --arch=x64 --platform=linux && sudo npm rebuild node-sass && npm audit fix",
     "test": "ava",
     "watch:test": "npx ava --watch",
     "build": "rollup -c",

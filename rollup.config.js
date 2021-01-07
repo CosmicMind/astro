@@ -17,7 +17,8 @@ import {
   aliasConfig,
   tsConfig,
   vueConfig,
-  compositionStyleDir,
+  compositionESMLibrary,
+  compositionStyleDirectory,
 } from '../rollup'
 
 /**
@@ -75,7 +76,7 @@ export default [
         minimize,
         use: [
           ['sass', {
-            includePaths: [ compositionStyleDir ],
+            includePaths: [ compositionStyleDirectory ],
           }]
         ],
       })
@@ -103,7 +104,7 @@ export default [
         minimize,
         use: [
           ['sass', {
-            includePaths: [ compositionStyleDir ],
+            includePaths: [ compositionStyleDirectory ],
           }]
         ],
       }),
@@ -112,6 +113,7 @@ export default [
     external,
     watch: {
       include: [ 
+        compositionESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'app/**')
       ],

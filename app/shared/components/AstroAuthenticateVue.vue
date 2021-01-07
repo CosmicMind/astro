@@ -2,15 +2,59 @@
 
 <template lang='pug'>
 aside.astro-authenticate-vue
-  slot
+  input-vue(v-model:modelValue='name')
+  select-vue(v-model:modelValue='selected')
+    option(v-for='x in salutations', 
+           v-bind:value='x',
+           v-bind:key='x',
+           v-bind:selected='x == selected') {{ x }}
+
+  p {{ selected }}
+  p {{ name }}
     
 </template>
 
 <script lang='ts'>
-import { defineComponent } from 'vue'
+import { 
+  ref,
+  watch,
+  defineComponent,
+} from 'vue'
+
+import { 
+  InputVue, 
+  SelectVue,  
+} from '$/composition'
 
 export default defineComponent({
   name: 'CompositeModalVue',
+
+  components: {
+    InputVue,
+    SelectVue,
+  },
+
+  setup() {
+    const name = ref('')
+
+    watch(name, () => {
+      console.log('Name', name)
+    })
+
+    const selected = ref('')
+    
+    watch(selected, () => {
+      console.log('Selected', selected)
+    })
+
+    const salutations = [ 'Mr.', 'Miss', 'Mrs' ]
+
+    return { 
+      name,
+      selected,
+      salutations,
+    }
+  },
 })
 
 </script>

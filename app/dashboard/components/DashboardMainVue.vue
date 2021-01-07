@@ -7,9 +7,10 @@ aside.composite-main-vue
   button(v-on:click='shouldShow = true') Modal
 
   astro-modal-teleport(v-if='shouldShow')
-    astro-authenticate-vue
-      button(v-on:click='shouldShow = false') Close
+    button(v-on:click='shouldShow = false') Close
   
+    astro-authenticate-vue
+    
 </template>
 
 <script lang='ts'>

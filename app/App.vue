@@ -13,7 +13,8 @@
       router-view(name='tools', v-bind:toggle-state='toggleState')
       router-view(name='main', v-bind:toggle-state='toggleState')
 
-      composite-modal-vue(v-bind:toggle-state='toggleState')
+      composite-modal-vue
+      
     template(v-slot:fallback='')
       p Loading...
 

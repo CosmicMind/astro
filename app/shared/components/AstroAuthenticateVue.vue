@@ -2,6 +2,7 @@
 
 <template lang='pug'>
 aside.astro-authenticate-vue
+  slot
     
 </template>
 

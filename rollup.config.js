@@ -30,11 +30,11 @@ const external = [
   'cluster', 
   'os',
   'http',
+  'keygrip',
   'koa',
   '@koa/router',
   'koa-views',
   'koa-static',
-  'keygrip',
   'ava'
 ]
 

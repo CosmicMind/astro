@@ -14,13 +14,17 @@ import koaStatic from 'koa-static'
 
 import keygrip from '^/keygrip.json'
 
-import { cookies } from '$/aurora'
+import { 
+  cleanse,
+  cookies,
+} from '$/aurora'
 
 export function createApp(env: any): any {
   const app: any = new Koa()
   app.proxy = process.env.DE_PROXY
   app.keys = new KeyGrip(keygrip.keys, keygrip.hash)
   
+  app.use(cleanse)
   app.use(cookies)
 
   app.use(koaStatic(env.assets, true ? {} : {

@@ -2,8 +2,8 @@
 
 <template lang='pug'>
 aside.astro-authenticate-vue
-  input-vue(v-model:modelValue='name')
-  select-vue(v-model:modelValue='selected')
+  input-vue(v-model:model-value.capitalize='name')
+  select-vue(v-model:model-value.capitalize='selected')
     option(v-for='x in salutations', 
            v-bind:value='x',
            v-bind:key='x',
@@ -27,7 +27,7 @@ import {
 } from '$/composition'
 
 export default defineComponent({
-  name: 'CompositeModalVue',
+  name: 'AstroAuthenticateVue',
 
   components: {
     InputVue,

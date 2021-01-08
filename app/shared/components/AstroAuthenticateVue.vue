@@ -2,8 +2,8 @@
 
 <template lang='pug'>
 aside.astro-authenticate-vue
-  input-vue(v-model:model-value.capitalize='name')
-  select-vue(v-model:model-value.capitalize='selected')
+  input-vue(type='text', v-model:model-value='name')
+  select-vue(v-model:model-value='selected')
     option(v-for='x in salutations', 
            v-bind:value='x',
            v-bind:key='x',

@@ -7,7 +7,7 @@ aside.astro-authenticate-vue
     option(v-for='x in salutations', 
            v-bind:value='x',
            v-bind:key='x',
-           v-bind:selected='x == selected') {{ x }}
+           v-bind:selected='x === selected') {{ x }}
 
   p {{ selected }}
   p {{ name }}

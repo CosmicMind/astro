@@ -7,6 +7,8 @@
 import koaRouter from '@koa/router'
 const router = new koaRouter()
 
+import { UserService } from '$/aurora'
+
 const styles = [
   {
     rel: 'stylesheet', 
@@ -53,6 +55,16 @@ const meta = {
 
 export function createRoutes(app: any) {
   app.use(router.routes()).use(router.allowedMethods())
+
+  app.use(async (ctx: any, next: any) => {
+    
+    await UserService.user(ctx.headers)
+                     .then((response: unknown) => {
+                      console.log('RESPONSE', response)
+                     }).catch(console.log)
+
+    await next()
+  })
 
   router.get('/',
   async (ctx: any) => {

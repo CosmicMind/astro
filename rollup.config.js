@@ -37,7 +37,8 @@ const external = [
   '@koa/router',
   'koa-views',
   'koa-static',
-  'ava'
+  'ava',
+  'axios'
 ]
 
 export default [

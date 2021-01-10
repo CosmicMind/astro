@@ -143,6 +143,9 @@ export default [
     external,
     watch: {
       include: [ 
+        foundationESMLibrary,
+        auroraESMLibrary,
+        compositionESMLibrary,
         path.resolve(__dirname, 'server/**')
       ],
     },

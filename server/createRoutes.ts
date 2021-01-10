@@ -53,69 +53,21 @@ const meta = {
   googlebot: 'noindex, nofollow, noarchive',
 }
 
+const fetchUser = async (ctx: any, next: any) => {
+  await UserService.user(ctx.headers)
+                   .catch((e: any) => { console.log('ERROR', e) })
+
+  await next()
+}
+
 export function createRoutes(app: any) {
   app.use(router.routes()).use(router.allowedMethods())
 
-  app.use(async (ctx: any, next: any) => {
-    
-    await UserService.user(ctx.headers)
-                     .then((response: unknown) => {
-                      console.log('RESPONSE', response)
-                     }).catch(console.log)
-
-    await next()
-  })
-
   router.get('/',
+  fetchUser,
   async (ctx: any) => {
     const options = { title: 'Dashboard' }
     
-    await ctx.render('base', {
-      meta,
-      styles,
-      scripts,
-      title: options.title,
-      properties: {
-        'og:title': options.title,
-        // 'og:site_name': options.siteName,
-        // 'og:url': options.url,
-        // 'og:description': options.description,
-        // 'og:image': options.image,
-
-        // 'twitter:image': options.image,
-        // 'twitter:title': options.title,
-        // 'twitter:description': options.description,
-      },
-    })
-  })
-
-  router.get('/spaces/:spaceId',
-  async (ctx: any) => {
-    const options = { title: 'Space' }
-
-    await ctx.render('base', {
-      meta,
-      styles,
-      scripts,
-      title: options.title,
-      properties: {
-        'og:title': options.title,
-        // 'og:site_name': options.siteName,
-        // 'og:url': options.url,
-        // 'og:description': options.description,
-        // 'og:image': options.image,
-
-        // 'twitter:image': options.image,
-        // 'twitter:title': options.title,
-        // 'twitter:description': options.description,
-      },
-    })
-  })
-
-  router.get('/projects/:projectId',
-  async (ctx: any) => {
-    const options = { title: 'Project' }
-
     await ctx.render('base', {
       meta,
       styles,

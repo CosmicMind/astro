@@ -2,11 +2,13 @@
 
 <template lang='pug'>
 aside.astro-authenticate-vue
-  input-vue(type='text', v-model:model-value='name')
+  input-vue(type='text', v-model='name')
   checkbox-vue(v-model='checked')
-  radio-vue(v-model='radio1', v-bind:value='"1"', name='pets')
-  radio-vue(v-model='radio2', v-bind:value='"2"', name='pets')
-  select-vue(v-model:model-value='selected')
+  radio-group-vue(v-bind:name='"toys"', 
+                  v-model='radio', 
+                  v-bind:options='options',
+                  v-bind:is-vertical='true')
+  select-vue(v-model='selected')
     option(v-for='x in salutations', 
            v-bind:value='x',
            v-bind:key='x',
@@ -30,6 +32,7 @@ import {
   SelectVue,
   CheckboxVue,
   RadioVue,
+  RadioGroupVue,
 } from '$/composition'
 
 export default defineComponent({
@@ -40,6 +43,7 @@ export default defineComponent({
     SelectVue,
     CheckboxVue,
     RadioVue,
+    RadioGroupVue,
   },
 
   setup() {
@@ -61,17 +65,16 @@ export default defineComponent({
       console.log('Checked', checked)
     })
 
-    const radio1 = ref('Cat')
+    const radio = ref('Cat')
     
-    watch(radio1, () => {
-      console.log('radio1', radio1)
+    watch(radio, () => {
+      console.log('radio', radio)
     })
 
-    const radio2 = ref('Dog')
-    
-    watch(radio2, () => {
-      console.log('radio2', radio2)
-    })
+    const options = [
+      { value: 'transformers' },
+      { value: 'GI-Joe' },
+    ]
 
     const salutations = [ 'Mr.', 'Miss', 'Mrs' ]
 
@@ -79,8 +82,8 @@ export default defineComponent({
       name,
       selected,
       checked,
-      radio1,
-      radio2,
+      radio,
+      options,
       salutations,
     }
   },

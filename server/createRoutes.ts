@@ -4,8 +4,8 @@
  * @module createRoutes
  */
 
-import koaRouter from '@koa/router'
-const router = new koaRouter()
+import KoaRouter from '@koa/router'
+const router = new KoaRouter()
 
 import { UserService } from '$/aurora'
 
@@ -56,7 +56,6 @@ const meta = {
 const fetchUser = async (ctx: any, next: any) => {
   await UserService.user({ cookie: ctx.headers.cookie })
                    .then((response: any) => {
-                     console.log('User', response)
                      return response
                    })
                    .catch((e: any) => { console.log('ERROR', e) })

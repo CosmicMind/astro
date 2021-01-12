@@ -10,7 +10,7 @@ dotenv.config()
 import Koa from 'koa'
 import KeyGrip from 'keygrip'
 import koaViews from 'koa-views'
-import koaStatic from 'koa-static'
+import KoaStatic from 'koa-static'
 
 import keygrip from '^/keygrip.json'
 
@@ -27,11 +27,11 @@ export function createApp(env: any): any {
   app.use(cleanse)
   app.use(cookies)
 
-  app.use(koaStatic(env.assets, true ? {} : {
+  app.use(KoaStatic(env.assets, true ? {} : {
     maxage: 1209600,
   }))
 
-  app.use(koaStatic(env.public, true ? {} : {
+  app.use(KoaStatic(env.public, true ? {} : {
     maxage: 1209600,
   }))
 

@@ -3,11 +3,15 @@
 <template lang='pug'>
 aside.astro-authenticate-vue
   input-vue(type='text', v-model:model-value='name')
+  checkbox-vue(v-model='checked')
+  radio-vue(v-model='radio1', v-bind:value='"1"', name='pets')
+  radio-vue(v-model='radio2', v-bind:value='"2"', name='pets')
   select-vue(v-model:model-value='selected')
     option(v-for='x in salutations', 
            v-bind:value='x',
            v-bind:key='x',
            v-bind:selected='x === selected') {{ x }}
+
 
   p {{ selected }}
   p {{ name }}
@@ -22,8 +26,10 @@ import {
 } from 'vue'
 
 import { 
-  InputVue, 
-  SelectVue,  
+  InputVue,
+  SelectVue,
+  CheckboxVue,
+  RadioVue,
 } from '$/composition'
 
 export default defineComponent({
@@ -32,6 +38,8 @@ export default defineComponent({
   components: {
     InputVue,
     SelectVue,
+    CheckboxVue,
+    RadioVue,
   },
 
   setup() {
@@ -47,11 +55,32 @@ export default defineComponent({
       console.log('Selected', selected)
     })
 
+    const checked = ref(false)
+    
+    watch(checked, () => {
+      console.log('Checked', checked)
+    })
+
+    const radio1 = ref('Cat')
+    
+    watch(radio1, () => {
+      console.log('radio1', radio1)
+    })
+
+    const radio2 = ref('Dog')
+    
+    watch(radio2, () => {
+      console.log('radio2', radio2)
+    })
+
     const salutations = [ 'Mr.', 'Miss', 'Mrs' ]
 
     return { 
       name,
       selected,
+      checked,
+      radio1,
+      radio2,
       salutations,
     }
   },
@@ -63,13 +92,6 @@ export default defineComponent({
 @import 'tools/_dev';
 
 .astro-authenticate-vue {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-
   @include theme() {
     background-color: theme-style(primary-background);
   }

@@ -54,7 +54,11 @@ const meta = {
 }
 
 const fetchUser = async (ctx: any, next: any) => {
-  await UserService.user(ctx.headers)
+  await UserService.user({ cookie: ctx.headers.cookie })
+                   .then((response: any) => {
+                     console.log('User', response)
+                     return response
+                   })
                    .catch((e: any) => { console.log('ERROR', e) })
 
   await next()

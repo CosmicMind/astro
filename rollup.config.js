@@ -38,7 +38,8 @@ const external = [
   'koa-views',
   'koa-static',
   'ava',
-  'axios'
+  'axios',
+  'mysql'
 ]
 
 export default [

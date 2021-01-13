@@ -11,6 +11,7 @@ import Koa from 'koa'
 import KeyGrip from 'keygrip'
 import koaViews from 'koa-views'
 import KoaStatic from 'koa-static'
+import KoaBody from 'koa-body'
 
 import keygrip from '^/keygrip.json'
 
@@ -24,8 +25,9 @@ export function createApp(env: any): any {
   app.proxy = process.env.DE_PROXY
   app.keys = new KeyGrip(keygrip.keys, keygrip.hash)
   
-  app.use(cleanse)
+  app.use(KoaBody())
   app.use(cookies)
+  app.use(cleanse)
 
   app.use(KoaStatic(env.assets, true ? {} : {
     maxage: 1209600,

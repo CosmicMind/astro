@@ -37,6 +37,7 @@ const external = [
   '@koa/router',
   'koa-views',
   'koa-static',
+  'koa-body',
   'ava',
   'axios',
   'mysql'

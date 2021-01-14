@@ -95,7 +95,7 @@ export default defineComponent({
           console.log('User', user)
           return user
         })
-        .catch((e: any) => { console.log('ERROR', e) })
+        .catch((e: any) => { console.log('ERROR', e, e.type, 'type', e.type == 'DataServiceError') })
     }
 
     return { 

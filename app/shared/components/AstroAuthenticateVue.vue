@@ -37,7 +37,7 @@ import {
   // RadioGroupVue,
 } from '$/composition'
 
-import { UserService } from '$/aurora'
+import { authenticateUser } from '$/aurora'
 
 export default defineComponent({
   name: 'AstroAuthenticateVue',
@@ -90,19 +90,12 @@ export default defineComponent({
     // const salutations = [ 'Mr.', 'Miss', 'Mrs' ]
 
     const onAuthenticate = async () => {
-      await UserService.authenticate(email.value, password.value)
-                       .then((user: any) => {
-                          console.log('User', user)
-                          return user
-                       })
-                       .catch((e: any) => { console.log('ERROR', e) })
-      await UserService.user()
-                       .then((user: any) => {
-                          console.log('User', user)
-                          return user
-                       })
-                       .catch((e: any) => { console.log('ERROR', e) })
-      
+      await authenticateUser(email.value, password.value)
+        .then((user: any) => {
+          console.log('User', user)
+          return user
+        })
+        .catch((e: any) => { console.log('ERROR', e) })
     }
 
     return { 

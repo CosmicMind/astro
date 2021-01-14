@@ -39,7 +39,6 @@ const external = [
   'koa-static',
   'koa-body',
   'ava',
-  'axios',
   'mysql'
 ]
 

@@ -7,8 +7,6 @@
 import KoaRouter from '@koa/router'
 const router = new KoaRouter()
 
-import { UserService } from '$/aurora'
-
 const styles = [
   {
     rel: 'stylesheet', 
@@ -53,21 +51,10 @@ const meta = {
   googlebot: 'noindex, nofollow, noarchive',
 }
 
-const fetchUser = async (ctx: any, next: any) => {
-  await UserService.user({ cookie: ctx.headers.cookie })
-                   .then((response: any) => {
-                     return response
-                   })
-                   .catch((e: any) => { console.log('ERROR', e) })
-
-  await next()
-}
-
 export function createRoutes(app: any) {
   app.use(router.routes()).use(router.allowedMethods())
 
   router.get('/',
-  fetchUser,
   async (ctx: any) => {
     const options = { title: 'Dashboard' }
     

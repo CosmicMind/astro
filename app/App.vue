@@ -10,12 +10,21 @@ import { defineComponent } from 'vue'
 
 import { CompositeVue } from '$/composition'
 
+import { Optional } from '$/foundation'
+
 export default defineComponent({
   name: 'App',
 
   components: {
     CompositeVue,
   },
+
+  setup() {
+    let y: Optional<number>
+    y = 111
+    console.log('HELLO', y)
+    return {}
+  }
 })
 
 </script>

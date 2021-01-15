@@ -28,7 +28,6 @@ import {
  */
 const external = [
   'dotenv',
-  'crypto',
   'cluster', 
   'os',
   'http',

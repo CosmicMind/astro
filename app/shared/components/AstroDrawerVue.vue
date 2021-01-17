@@ -66,9 +66,9 @@ composite-drawer-vue(v-bind:toggle-state='toggleState')
     .toolbar
       .toolbar-start
         .toolbar-item
-          router-link-vue.no-select(v-bind:to='"/"', v-bind:title='"Dashboard"')
-            figure-vue.is-32x32(v-bind:src='"/cosmicmind-logo-light.svg"', 
-                                v-bind:alt='"CosmicMind Logo"')
+          //- router-link-vue.no-select(v-bind:to='"/"', v-bind:title='"Dashboard"')
+          figure-vue.is-32x32(v-bind:src='"/cosmicmind-logo-light.svg"', 
+                              v-bind:alt='"CosmicMind Logo"')
 
         .toolbar-item(v-if='isOpened')
           p.copy.is-nowrap &copy; 2020 CosmicMind, Inc.

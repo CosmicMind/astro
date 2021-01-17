@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "CosmicMind application.",
   "private": true,
-  "types": "dist/types/astro/index.d.ts",
   "files": [
     "dist"
   ],

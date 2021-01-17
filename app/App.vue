@@ -1,7 +1,7 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-composite-vue#app-vue.app-vue
+composite-vue.app-vue
 
 </template>
 
@@ -24,7 +24,7 @@ export default defineComponent({
     y = 111
     console.log('HELLO', y)
     return {}
-  }
+  },
 })
 
 </script>

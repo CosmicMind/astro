@@ -4,8 +4,8 @@
     "composite": true,
     "rootDir": "..",
     "declarationDir": "dist/types",
-    "baseUrl": ".",
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "."
   },
   "references": [
     { "path": "../foundation/tsconfig.json" },
@@ -13,9 +13,9 @@
     { "path": "../composition/tsconfig.json" }
   ],
   "files": [
-    "../foundation/dist/lib/lib.esm.js",
-    "../aurora/dist/lib/lib.esm.js",
-    "../composition/dist/lib/lib.esm.js"
+    "../foundation/index.ts",
+    "../aurora/index.ts",
+    "../composition/index.ts"
   ],
   "include": [
     "**/*.ts",

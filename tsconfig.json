@@ -13,14 +13,15 @@
     { "path": "../composition/tsconfig.json" }
   ],
   "files": [
-    "../foundation/index.ts",
-    "../aurora/index.ts",
-    "../composition/index.ts"
+    "../foundation/dist/types/foundation/index.d.ts",
+    "../aurora/dist/types/aurora/index.d.ts",
+    "../composition/dist/types/composition/index.d.ts"
   ],
   "include": [
+    "**/*.vue",
     "**/*.ts",
-    "**/*.json",
-    "**/*.vue"
+    "src/**/*.js",
+    "config/**/*.json"
   ],
   "exclude": [
     "dist",

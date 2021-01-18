@@ -46,8 +46,8 @@ export default [
     output: [
       {
         name: 'tests',
-        file: path.resolve(__dirname, 'dist/tests/tests.esm.mjs'),
-        format: 'esm',
+        file: path.resolve(__dirname, 'build/tests/tests.esm.mjs'),
+        format: 'es',
         sourcemap,
         plugins,
       }
@@ -90,7 +90,7 @@ export default [
       {
         name: 'app',
         file: path.resolve(__dirname, 'dist/public/app.js'),
-        format: 'esm',
+        format: 'es',
         sourcemap,
         plugins,
       },
@@ -128,8 +128,8 @@ export default [
     output: [
       {
         name: server,
-        file: path.resolve(__dirname, 'dist/server/server.esm.mjs'),
-        format: 'esm',
+        file: path.resolve(__dirname, 'dist/server/server.esm.js'),
+        format: 'es',
         sourcemap,
         plugins,
       },
@@ -145,6 +145,7 @@ export default [
         foundationESMLibrary,
         auroraESMLibrary,
         compositionESMLibrary,
+        path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'server/**')
       ],
     },

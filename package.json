@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "CosmicMind application.",
   "private": true,
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -40,12 +41,13 @@
     "vue-router": "^4.0.2"
   },
   "scripts": {
-    "install:linux": "npm install --arch=x64 --platform=linux && sudo npm rebuild node-sass && npm audit fix",
+    "clean": "rm -rf dist && rm -rf build",
+    "install": "npm install --arch=x64 --platform=linux && sudo npm rebuild node-sass && npm audit fix",
     "test": "ava",
     "watch:test": "npx ava --watch",
-    "build": "rollup -c",
+    "build": "npm run clean && rollup -c",
     "watch": "rollup -cw",
-    "server": "node dist/server/server.esm.mjs"
+    "server": "node dist/server/server.esm.js"
   },
   "repository": {
     "type": "git",

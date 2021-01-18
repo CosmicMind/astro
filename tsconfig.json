@@ -2,7 +2,7 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
-    "rootDir": "..",
+    "rootDir": ".",
     "declarationDir": "dist/types",
     "outDir": "dist",
     "baseUrl": "."
@@ -12,11 +12,7 @@
     { "path": "../aurora/tsconfig.json" },
     { "path": "../composition/tsconfig.json" }
   ],
-  "files": [
-    "../foundation/dist/types/foundation/index.d.ts",
-    "../aurora/dist/types/aurora/index.d.ts",
-    "../composition/dist/types/composition/index.d.ts"
-  ],
+  "files": [],
   "include": [
     "**/*.vue",
     "**/*.ts",
@@ -25,6 +21,7 @@
   ],
   "exclude": [
     "dist",
+    "build",
     "node_modules"
   ],
   "typeRoots": [

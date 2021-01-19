@@ -4,17 +4,17 @@ import { RouteRecordRaw } from 'vue-router'
 
 import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
 
-import DashboardSearchBarVue from '#/app/dashboard/components/DashboardSearchBarVue.vue'
-import DashboardMainVue from '#/app/dashboard/components/DashboardMainVue.vue'
+import SearchBarVue from '#/app/dashboard/components/SearchBarVue.vue'
+import MainVue from '#/app/dashboard/components/MainVue.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
-		name: 'DashboardRoute',	
+		name: 'Dashboard',	
 		path: '/',
 		components: {
-			'search-bar': DashboardSearchBarVue,
+			'search-bar': SearchBarVue,
 			'drawer': AstroDrawerVue,
-			'main': DashboardMainVue,
+			'main': MainVue,
 		},
 		props: true,
 	}

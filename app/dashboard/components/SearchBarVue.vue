@@ -1,7 +1,7 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-composite-search-bar-vue(v-bind:toggle-state='toggleState')
+composite-search-bar-vue
   template(v-slot:start='')
     .navbar-item.has-gutter.grow
       h1.title.is-1 Dashboard
@@ -17,7 +17,7 @@ import { defineComponent } from 'vue'
 
 import {
   SearchVue,
-  CompositeSearchBarVue,
+  SearchBarVue as CompositeSearchBarVue,
 } from '$/composition'
 
 export default defineComponent({
@@ -26,13 +26,6 @@ export default defineComponent({
   components: {
     CompositeSearchBarVue,
     SearchVue,
-  },
-
-  props: {
-    toggleState: {
-      required: true, 
-      type: Function,
-    },
   },
 })
 

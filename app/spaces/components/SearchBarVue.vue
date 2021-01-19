@@ -1,42 +1,31 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-composite-search-bar-vue(v-bind:toggle-state='toggleState')
+composite-search-bar-vue
   template(v-slot:start='')
     .navbar-item.has-gutter.grow
-      router-link-vue.is-ellipsis.no-select(v-bind:to='`/projects/${$route.params.projectId}`', v-bind:title='"Projects"') Projects
+      h1.title.is-1 Spaces
   
   template(v-slot:center='')
     .navbar-item.has-gutter.grow
       search-vue
-
+  
 </template>
 
 <script lang='ts'>
 import { defineComponent } from 'vue'
 
-import { 
-  FigureVue,
-  RouterLinkVue,
+import {
   SearchVue,
-  CompositeSearchBarVue,
+  SearchBarVue as CompositeSearchBarVue,
 } from '$/composition'
 
 export default defineComponent({
-  name: 'ProjectsSearchBarVue',
+  name: 'SpacesSearchBarVue',
 
   components: {
-    FigureVue,
-    RouterLinkVue,
     CompositeSearchBarVue,
     SearchVue,
-  },
-
-  props: {
-    toggleState: {
-      required: true, 
-      type: Function,
-    },
   },
 })
 

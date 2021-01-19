@@ -1,21 +1,21 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-modal-teleport
-  slot
+composite-main-vue
+  p Projects 
 
 </template>
 
 <script lang='ts'>
 import { defineComponent } from 'vue'
 
-import { ModalTeleport } from '$/composition'
+import { MainVue as CompositeMainVue } from '$/composition'
 
 export default defineComponent({
-  name: 'AstroModalTeleport',
+  name: 'ProjectsSearchBarVue',
 
   components: {
-    ModalTeleport,
+    CompositeMainVue
   },
 })
 

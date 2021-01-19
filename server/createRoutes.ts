@@ -76,4 +76,50 @@ export function createRoutes(app: any) {
       },
     })
   })
+
+  router.get('/projects/:projectId',
+  async (ctx: any) => {
+    const options = { title: 'Dashboard' }
+    
+    await ctx.render('base', {
+      meta,
+      styles,
+      scripts,
+      title: options.title,
+      properties: {
+        'og:title': options.title,
+        // 'og:site_name': options.siteName,
+        // 'og:url': options.url,
+        // 'og:description': options.description,
+        // 'og:image': options.image,
+
+        // 'twitter:image': options.image,
+        // 'twitter:title': options.title,
+        // 'twitter:description': options.description,
+      },
+    })
+  })
+
+  router.get('/spaces/:spaceId',
+  async (ctx: any) => {
+    const options = { title: 'Dashboard' }
+    
+    await ctx.render('base', {
+      meta,
+      styles,
+      scripts,
+      title: options.title,
+      properties: {
+        'og:title': options.title,
+        // 'og:site_name': options.siteName,
+        // 'og:url': options.url,
+        // 'og:description': options.description,
+        // 'og:image': options.image,
+
+        // 'twitter:image': options.image,
+        // 'twitter:title': options.title,
+        // 'twitter:description': options.description,
+      },
+    })
+  })
 }

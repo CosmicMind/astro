@@ -4,17 +4,17 @@ import { RouteRecordRaw } from 'vue-router'
 
 import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
 
-import SpacesSearchBarVue from '#/app/spaces/components/SpacesSearchBarVue.vue'
-import SpacesMainVue from '#/app/spaces/components/SpacesMainVue.vue'
+import SearchBarVue from '#/app/spaces/components/SearchBarVue.vue'
+import MainVue from '#/app/spaces/components/MainVue.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
-		name: 'SpacesRoute',	
+		name: 'Spaces',	
 		path: '/spaces/:spaceId',
 		components: {
-			'search-bar': SpacesSearchBarVue,
+			'search-bar': SearchBarVue,
 			'drawer': AstroDrawerVue,
-			'main': SpacesMainVue,
+			'main': MainVue,
 		},
 		props: true,
 	}

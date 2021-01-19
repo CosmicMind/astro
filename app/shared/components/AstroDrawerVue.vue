@@ -1,7 +1,7 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template lang='pug'>
-composite-drawer-vue(v-bind:toggle-state='toggleState')
+drawer-vue(v-bind:toggle-state='toggleState')
   aside.astro-drawer-vue
     nav.navbar
       .navbar-end
@@ -82,7 +82,7 @@ import {
 } from 'vue'
 
 import {
-  CompositeDrawerVue,
+  DrawerVue,
   DividerVue,
   ListVue,
   ListItemsVue,
@@ -99,7 +99,7 @@ export default defineComponent({
   name: 'AstroDrawerVue',
 
   components: {
-    CompositeDrawerVue,
+    DrawerVue,
     DividerVue,
     ListVue,
     ListItemsVue,
@@ -124,7 +124,7 @@ export default defineComponent({
 
     const onToggle = () => {
       isOpened.value = !isOpened.value
-      toggleState('composite-drawer-vue-opened')
+      toggleState('drawer-vue-opened')
     }
 
     const items = [
@@ -225,7 +225,7 @@ export default defineComponent({
     top: $navbar-height;
     left: 0;
     bottom: $toolbar-height;
-    width: $composite-drawer-vue-width;
+    width: $drawer-vue-width;
     overflow: auto;
 
     > .toolbar {

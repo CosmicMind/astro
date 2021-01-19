@@ -4,17 +4,17 @@ import { RouteRecordRaw } from 'vue-router'
 
 import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
 
-import ProjectsSearchBarVue from '#/app/projects/components/ProjectsSearchBarVue.vue'
-import ProjectsMainVue from '#/app/projects/components/ProjectsMainVue.vue'
+import SearchBarVue from '#/app/projects/components/SearchBarVue.vue'
+import MainVue from '#/app/projects/components/MainVue.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
-		name: 'ProjectsRoute',	
+		name: 'Projects',	
 		path: '/projects/:projectId',
 		components: {
-			'search-bar': ProjectsSearchBarVue,
+			'search-bar': SearchBarVue,
 			'drawer': AstroDrawerVue,
-			'main': ProjectsMainVue,
+			'main': MainVue,
 		},
 		props: true,
 	}

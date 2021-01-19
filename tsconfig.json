@@ -14,9 +14,9 @@
   ],
   "files": [],
   "include": [
-    "**/*.vue",
     "**/*.ts",
     "src/**/*.js",
+    "src/**/*.vue",
     "config/**/*.json"
   ],
   "exclude": [

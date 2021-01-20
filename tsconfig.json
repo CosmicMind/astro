@@ -8,9 +8,9 @@
     "baseUrl": "."
   },
   "references": [
-    { "path": "../foundation/tsconfig.json" },
-    { "path": "../aurora/tsconfig.json" },
-    { "path": "../composition/tsconfig.json" }
+    { "path": "../foundation" },
+    { "path": "../aurora" },
+    { "path": "../composition" }
   ],
   "files": [],
   "include": [

@@ -60,6 +60,7 @@ export default [
     external,
     watch: {
       include: [ 
+        path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'tests/**')
       ],
     },

@@ -8,6 +8,8 @@ import pug from 'rollup-plugin-pug'
 import postcss from 'rollup-plugin-postcss'
 import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
+import { nodeResolve as resolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 
 import {
   sourcemap,
@@ -110,7 +112,11 @@ export default [
           }]
         ],
       }),
-      typescript(tsConfig)
+      typescript(tsConfig),
+      resolve({
+        browser: true,
+      }),
+      commonjs()
     ],
     external,
     watch: {

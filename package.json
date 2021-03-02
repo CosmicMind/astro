@@ -43,7 +43,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist && rm -rf build",
-    "install:linux": "npm install --arch=x64 --platform=linux && sudo npm rebuild node-sass && npm audit fix",
+    "install:linux": "npm install --arch=x64 --platform=linux && npm rebuild node-sass && npm audit fix",
     "test": "ava",
     "watch:test": "npx ava --watch",
     "build": "npm run clean && rollup -c",

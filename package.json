@@ -44,7 +44,7 @@
   "scripts": {
     "clean": "rm -rf dist && rm -rf build",
     "install:linux": "npm install --arch=x64 --platform=linux && npm rebuild node-sass && npm audit fix",
-    "test": "ava",
+    "test": "ava --verbose",
     "watch:test": "npx ava --watch",
     "build": "npm run clean && rollup -c",
     "watch": "npm run clean && rollup -cw",

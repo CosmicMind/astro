@@ -113,9 +113,7 @@ export default [
         ],
       }),
       typescript(tsConfig),
-      resolve({
-        browser: true,
-      }),
+      resolve(),
       commonjs()
     ],
     external,

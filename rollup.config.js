@@ -113,7 +113,7 @@ export default [
         ],
       }),
       typescript(tsConfig),
-      resolve({ preferBuiltins: true }),
+      resolve({ preferBuiltins: false }),
       commonjs()
     ],
     external,

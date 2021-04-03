@@ -19,8 +19,4 @@ const router = createRouter({
 	history,
 })
 
-// scrollBehavior(to, from, savedPosition) {
-// 	document.body.querySelector('.app').scrollTo(0, 0);
-// },
-
 export default router

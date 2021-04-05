@@ -1,0 +1,13 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@function to-px($value) {
+  @return $value * 1px;
+}
+
+@function to-rem($value) {
+  @return $value * 1rem;
+}
+
+@function hex-to-rgba($hexcolor, $opacity: 1) {
+  @return rgba($hexcolor, $opacity); 
+}

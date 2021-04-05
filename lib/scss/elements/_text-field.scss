@@ -1,0 +1,65 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'tools/_dev';
+
+$light: (
+  title: light-theme(primary-title),
+);
+
+$dark: (
+  title: dark-theme(primary-title),
+);
+
+.text-field {
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden;
+
+  border-radius: $border-radius;
+  
+  > .icon {
+    @include margin-block();
+    @include margin-inline();
+    @include padding-block();
+    @include padding-inline();
+
+    display: flex;
+    flex-flow: column;
+
+    align-items: baseline;
+    align-content: center;
+    justify-content: center;
+  }
+
+  > input {
+    @include margin-block();
+    @include margin-inline();
+    @include padding-block();
+    @include padding-inline();
+    
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
+    background-color: transparent;
+    border: none;
+
+    &,
+    &::placeholder {
+      @include theme() {
+        color: theme-style(title);
+      }
+    }
+  }
+}

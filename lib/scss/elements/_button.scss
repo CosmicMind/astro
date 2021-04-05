@@ -1,0 +1,191 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'tools/_dev';
+
+$light: (  
+  button: light-theme(primary-button),
+  button-hover: light-theme(primary-button-hover),
+  button-active: light-theme(primary-button-active),
+  button-background: light-theme(primary-button-background),
+  button-background-hover: light-theme(primary-button-background-hover),
+  button-background-active: light-theme(primary-button-background-active),
+  button-border: light-theme(primary-button-border),
+  button-border-hover: light-theme(primary-button-border-hover),
+  button-border-active: light-theme(primary-button-border-active),
+);
+
+$dark: (  
+  button: dark-theme(primary-button),
+  button-hover: dark-theme(primary-button-hover),
+  button-active: dark-theme(primary-button-active),
+  button-background: dark-theme(primary-button-background),
+  button-background-hover: dark-theme(primary-button-background-hover),
+  button-background-active: dark-theme(primary-button-background-active),
+  button-border: dark-theme(primary-button-border),
+  button-border-hover: dark-theme(primary-button-border-hover),
+  button-border-active: dark-theme(primary-button-border-active),
+);
+
+$icon-button-width-value: 32;
+$icon-button-width: to-px($icon-button-width-value);
+$icon-button-height-value: 32;
+$icon-button-height: to-px($icon-button-height-value);
+
+a.button,
+a.flat-button,
+a.raised-button,
+a.fab-button,
+a.icon-button,
+.button,
+.flat-button,
+.raised-button,
+.fab-button,
+.icon-button,
+.input-button {
+  position: relative;
+  display: inline-grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  
+  transition: box-shadow $transition-duration $transition-timing-function,
+              color $transition-duration $transition-timing-function,
+              background-color $transition-duration $transition-timing-function,
+              border $transition-duration $transition-timing-function,
+              opacity $transition-duration $transition-timing-function;
+
+  &:not(.button) {
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+  }
+
+  @include theme() {
+    color: theme-style(button);
+    background-color: theme-style(button-background);
+    border-color: theme-style(button-border);
+  }
+
+  &:hover {
+    @include theme() {
+      color: theme-style(button-hover);
+      background-color: theme-style(button-background-hover);
+      border-color: theme-style(button-border-hover);
+    }
+  }
+
+  &.is-active {
+    @include theme() {
+      color: theme-style(button-active);
+      background-color: theme-style(button-background-active);
+      border-color: theme-style(button-border-active);
+    }
+  }
+
+  > span {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  > i,
+  > span {
+    + i,
+    + span {
+      // @include padding-inline(to-px($spacer-value * 3), 0)
+    }
+
+    &.is-tiny {
+      font-size: $button-font-size-tiny;
+    }
+  
+    &.is-small {
+      font-size: $button-font-size-small;
+    }
+  
+    &,
+    &.is-normal {
+      font-size: $button-font-size-normal;
+    }
+  
+    &.is-medium {
+      font-size: $button-font-size-medium;
+    }
+  
+    &.is-large {
+      font-size: $button-font-size-large;
+    }
+  }
+
+  &.is-tiny {
+    @include padding-block(to-px(3));
+    @include padding-inline(to-px(6));
+
+    font-size: $button-font-size-tiny;
+  }
+
+  &.is-small {
+    @include padding-block(to-px(4));
+    @include padding-inline(to-px(9));
+
+    font-size: $button-font-size-small;
+  }
+
+  &,
+  &.is-normal {
+    @include padding-block(to-px(5));
+    @include padding-inline(to-px(12));
+    
+    font-size: $button-font-size-normal;
+  }
+
+  &.is-medium {
+    @include padding-block(to-px(7));
+    @include padding-inline(to-px(15));
+    
+    font-size: $button-font-size-medium;
+  }
+
+  &.is-large {
+    @include padding-block(to-px(8));
+    @include padding-inline(to-px(18));
+
+    font-size: $button-font-size-large;
+  }
+}
+
+.raised-button,
+.fab-button {
+  @extend %elevation-3;
+}
+
+.fab-button,
+.icon-button {
+  padding: 0 !important;
+
+  width: $icon-button-width;
+  height: $icon-button-height;
+
+  align-items: center !important;
+  align-content: center !important;
+  justify-content: center !important;
+
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+
+.input-button {
+  > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .01;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,63 @@
+/// Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved.
+
+@import 'helpers/_conversion';
+
+$spacer-value: 4;
+$spacer: to-px($spacer-value);
+
+/// gutter
+$gutter-value: $spacer-value * 2;
+$gutter: to-px($gutter-value);
+
+@mixin margin-block($spacer: 0, $bottom: null) { 
+  margin: { 
+    top: $spacer; 
+    bottom: $spacer; 
+  } 
+
+  @if ($bottom) {
+    margin: { 
+      bottom: $bottom; 
+    }    
+  }
+}
+
+@mixin margin-inline($spacer: 0, $right: null) { 
+  margin: { 
+    left: $spacer; 
+    right: $spacer; 
+  } 
+
+  @if ($right) {
+    margin: { 
+      right: $right; 
+    }    
+  }
+}
+
+// add/remove paddings
+@mixin padding-block($spacer: 0, $bottom: null) { 
+  padding: { 
+    top: $spacer; 
+    bottom: $spacer; 
+  } 
+
+  @if ($bottom) {
+    padding: { 
+      bottom: $bottom; 
+    }    
+  }
+}
+
+@mixin padding-inline($spacer: 0, $right: null) { 
+  padding: { 
+    left: $spacer; 
+    right: $spacer; 
+  } 
+
+  @if ($right) {
+    padding: { 
+      right: $right; 
+    }    
+  }
+}

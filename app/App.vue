@@ -1,10 +1,5 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
-  <composite-vue class='app-vue'></composite-vue>
-
-</template>
-
 <script lang='ts'>
 import { defineComponent } from 'vue'
 
@@ -28,3 +23,8 @@ export default defineComponent({
 })
 
 </script>
+
+<template lang='html'>
+  <composite-vue id='app-vue' class='app-vue'></composite-vue>
+
+</template>

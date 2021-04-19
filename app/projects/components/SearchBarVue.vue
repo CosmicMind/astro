@@ -1,14 +1,17 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-composite-search-bar-vue
-  template(v-slot:start='')
-    .navbar-item.has-gutter.grow
-      h1.title.is-1 Projects
-  
-  template(v-slot:center='')
-    .navbar-item.has-gutter.grow
-      search-vue
+<template lang='html'>
+  <composite-search-bar-vue>
+    <template v-slot:start>
+      <div class='navbar-item has-gutter grow'>
+        <h1 class='title is-1'>Projects</h1>
+      </div>
+    </template>    
+    <template v-slot:center>
+      <div class='navbar-item has-gutter grow'>
+        <search-vue></search-vue>
+      </div>
+    </template>
   
 </template>
 

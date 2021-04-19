@@ -1,8 +1,9 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-modal-teleport
-  slot
+<template lang='html'>
+  <modal-teleport>
+    <slot></slot>
+  </modal-teleport>
 
 </template>
 

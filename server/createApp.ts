@@ -30,7 +30,7 @@ export function createApp(env: any): any {
     maxage: 1209600,
   }))
 
-  app.use(koaViews(env.views, { extension: 'pug' }))
+  app.use(koaViews(env.views, { extension: 'html' }))
 
   return app
 }

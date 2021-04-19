@@ -1,13 +1,16 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-composite-main-vue
-  button(v-on:click='shouldShow = true') Modal
+<template lang='html'>
+  <composite-main-vue>
+    <button v-on:click='shouldShow = true'>Modal</button>
 
-  astro-modal-teleport(v-if='shouldShow')
-    .modal
-      button(v-on:click='shouldShow = false') Close
-      astro-authenticate-vue
+    <astro-modal-teleport v-if='shouldShow'>
+      <div class='modal'>
+        <button v-on:click='shouldShow = false'>Close</button>
+        <astro-authenticate-vue></asttro-authenticate-vue>
+      </div>
+    </astro-modal-teleport>
+  </composite-main-vue>
   
 </template>
 

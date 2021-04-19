@@ -1,77 +1,122 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-drawer-vue(v-bind:toggle-state='toggleState')
-  aside.astro-drawer-vue
-    nav.navbar
-      .navbar-end
-        .navbar-item
-          button.icon-button(v-on:click='onToggle')
-            span.icon(v-if='isOpened')
-              i.fas.fa-arrow-left
-            span.icon(v-if='!isOpened')
-              i.fas.fa-bars
-    
-    .content(v-if='isOpened')
-      list-vue
-        list-items-vue
-          list-item-vue.border-radius(v-for='(x, i) in items', v-bind:key='i')
-            .row
-              .row-start
-                .column
-                  icon-vue(v-bind:style='x.icon')
+<template lang='html'>
+  <drawer-vue v-bind:toggle-state='toggleState'>
+    <aside class='astro-drawer-vue'>
+      <nav class='navbar'>
+        <div class='navbar-end'>
+          <div class='navbar-item'>
+            <button class='icon-button' v-on:click='onToggle'>
+              <span class='icon' v-if='isOpened'>
+                <i class='fas fa-arrow-left'></i>
+              </span>
+              <span class='icom' v-if='!isOpened'>
+                <i class='fas fa-bars'></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class='content' v-if='isOpened'>
+        <list-vue>
+          <list-items-vue>
+            <list-item-vue class='border-radius' v-for='(x, i) in items', v-bind:key='i'>
+              <div class='row'>
+                <div class='row-start'>
+                  <div class='column'>
+                    <icon-vue v-bind:style='x.icon'></icon-vue>
+                  </div>
+                </div>
+
+                <div class='row-center'>
+                  <div class='column'>
+                    <label-vue class='no-select'>{{ x.label }}</label-vue>
+                  </div>
+                </div>
+              </div>
+            </list-item-vue>
+          </list-items-vue>
+        </list-vue>
               
-              .row-center
-                .column
-                  label-vue.no-select {{ x.label }}
-            
-      .toolbar(v-if='isOpened')
-        .toolbar-center
-          .toolbar-item
-            h3 
-              label-vue.is-nowrap.no-select Projects
-        
-        .toolbar-end
-          .toolbar-item
-            button.icon-button(v-on:click='onToggle')
-              span.icon
-                i.fas.fa-plus
-                
-      list-vue
-        list-items-vue
-          list-item-vue.border-radius(v-for='(x, i) in projects', v-bind:key='i')
-            .row
-              .row-center
-                .column
-                  router-link-vue.is-ellipsis.no-select(v-bind:to='`/projects/${i + 1}`', v-bind:title='x.label') {{ x.label }}
+        <div class='toolbar' v-if='isOpened'>
+          <div class='toolbar-center'>
+            <div class='toolbar-item'>
+              <h3> 
+                <label-vue class='is-nowrap no-select'>Projects</label-vue>
+              </h3>
+            </div>
+          </div>
+          
+          <div class='toolbar-end'>
+            <div class='toolbar-item'>
+              <button class='icon-button' v-on:click='onToggle'>
+                <span class='icon'>
+                  <i class='fas fa-plus'></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+                  
+        <list-vue>
+          <list-items-vue>
+            <list-item-vue class='border-radius' v-for='(x, i) in projects', v-bind:key='i'>
+              <div class='row'>
+                <div class='row-center'>
+                  <div class='column'>
+                    <router-link-vue class='is-ellipsis no-select' v-bind:to='`/projects/${i + 1}`' v-bind:title='x.label'>{{ x.label }}</router-link-vue>
+                  </div>
+                </div>
 
-              .row-end 
-                .column
-                  dropdown-vue
-                    template(v-slot:trigger='')
-                      icon-vue.no-select(v-bind:style='"fas fa-ellipsis-h"')
-                    template(v-slot:content='')
-                      list-vue
-                        list-items-vue
-                          list-item-vue(v-bind:key='"0"')
-                            .row
-                              .row-center
-                                .column
-                                  label-vue.is-nowrap.has-gutter.no-select Share
+                <div class='row-end'> 
+                  <div class='column'>
+                    <dropdown-vue>
+                      <template v-slot:trigger>
+                        <icon-vue class='no-select' v-bind:style='"fas fa-ellipsis-h"'></icon-vue>
 
-                              .row-end
-                                .column
-                                  icon-vue(v-bind:style='"fas fa-share"')
+                      <template v-slot:content>
+                        <list-vue>
+                          <list-items-vue>
+                            <list-item-vue v-bind:key='"0"'>
+                              <div class='row'>
+                                <div class='row-center'>
+                                  <div class='column'>
+                                    <label-vue class='is-nowrap has-gutter no-select'>Share</label-vue>
+                                  </div>
+                                </div>
+                              
+                                <div class='row-end'>
+                                  <div class='column'>
+                                    <icon-vue v-bind:style='"fas fa-share"'></icon-vue>
+                                  </div>
+                                </div>
+                              </div>
+                            </list-item-vue>
+                          </list-items-vue>
+                        </list-vue>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </list-item-vue>
+          </list-items-vue>
+        </list-vue>
+      </div>
 
-    .toolbar
-      .toolbar-start
-        .toolbar-item
-          //- router-link-vue.no-select(v-bind:to='"/"', v-bind:title='"Dashboard"')
-          figure-vue.is-32x32(v-bind:src='"/cosmicmind-logo-light.svg"', 
-                              v-bind:alt='"CosmicMind Logo"')
-
-        .toolbar-item(v-if='isOpened')
-          p.copy.is-nowrap &copy; 2020 CosmicMind, Inc.
+      <div class='toolbar'>
+        <div class='toolbar-start'>
+          <div class='toolbar-item'>
+            <figure-vue class='is-32x32' v-bind:src='"/cosmicmind-logo-light.svg"' v-bind:alt='"CosmicMind Logo"'></figure-vue>
+          </div>
+          <div class='toolbar-item' v-if='isOpened'>
+            <p class='copy is-nowrap'>&copy; 2020 CosmicMind, Inc.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </drawer-vue>
 
 </template>
 

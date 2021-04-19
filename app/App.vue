@@ -1,7 +1,7 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-composite-vue.app-vue
+<template lang='html'>
+  <composite-vue class='app-vue'></composite-vue>
 
 </template>
 

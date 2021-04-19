@@ -1,23 +1,11 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<!--
-checkbox-vue(v-model='checked')
-  radio-group-vue(v-bind:name='"toys"', 
-                  v-model='radio', 
-                  v-bind:options='options',
-                  v-bind:is-vertical='true')
-  select-vue(v-model='selected')
-    option(v-for='x in salutations', 
-           v-bind:value='x',
-           v-bind:key='x',
-           v-bind:selected='x === selected') {{ x }}
--->
-
-<template lang='pug'>
-aside.astro-authenticate-vue
-  input-vue(v-model='email', type='text', placeholder='Email')
-  input-vue(v-model='password', type='password', placeholder='Password')
-  button-vue(v-on:click='onAuthenticate') Sign In
+<template lang='html'>
+  <aside class='astro-authenticate-vue'>
+    <input-vue v-model='email' type='text' placeholder='Email'></input-vue>
+    <input-vue v-model='password' type='password' placeholder='Password'></input-vue>
+    <button-vue v-on:click='onAuthenticate'>Sign In</button>
+  </aside>
     
 </template>
 

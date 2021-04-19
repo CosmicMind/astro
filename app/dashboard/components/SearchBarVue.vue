@@ -1,23 +1,30 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-composite-search-bar-vue
-  template(v-slot:start='')
-    .navbar-item.has-gutter.grow
-      h1.title.is-1 Dashboard
-  
-  template(v-slot:center='')
-    .navbar-item.has-gutter.grow
-      search-vue
-  
-  template(v-slot:end='')
-    .navbar-item.has-gutter
-      dropdown-vue.is-right
-        template(v-slot:trigger='')
-          figure-vue.is-28x28(v-bind:src='"/user-alt-duotone.svg"', v-bind:alt='"Space Logo"')
-        template(v-slot:content='')
-          access-list-vue
-  
+<template lang='html'>
+  <composite-search-bar-vue>
+    <template v-slot:start>
+      <div class='navbar-item has-gutter grow'>
+        <h1 class='title is-1'>Dashboard
+    
+    <template v-slot:center>
+      <div class='navbar-item has-gutter grow'>
+        <search-vue></search-vue>
+      </div>
+    </template>
+    
+    <template v-slot:end>
+      <div class='navbar-item has-gutter'>
+        <dropdown-vue class='is-right'>
+          <template v-slot:trigger>
+            <figure-vue class='is-28x28' v-bind:src='"/user-alt-duotone.svg"' v-bind:alt='"Space Logo"'></figure-vue>
+          </template>
+          <template v-slot:content>
+            <access-list-vue></access-list-vue>
+          </template>
+        </dropdown-vue>
+      </div>
+    </template>
+
 </template>
 
 <script lang='ts'>

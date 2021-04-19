@@ -4,7 +4,6 @@ import path from 'path'
 
 import alias from '@rollup/plugin-alias'
 import json from '@rollup/plugin-json'
-import pug from 'rollup-plugin-pug'
 import postcss from 'rollup-plugin-postcss'
 import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
@@ -105,7 +104,6 @@ export default [
       alias(aliasConfig),
       vue(vueConfig),
       json(),
-      pug(),
       postcss({
         extract: path.resolve(__dirname, 'dist/public/app.css'),
         minimize,

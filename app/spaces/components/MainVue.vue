@@ -1,8 +1,9 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-composite-main-vue
-  p Spaces 
+<template lang='html'>
+  <composite-main-vue>
+    <p>Spaces</p>
+  </composite-main-vue> 
 
 </template>
 

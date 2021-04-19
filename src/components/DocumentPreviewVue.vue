@@ -1,26 +1,40 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-.document-preview-vue
-  .content
-    .preview
-      .toolbar
-        .toolbar-end 
-          .toolbar-item
-            icon-vue(v-bind:style='"fas fa-users-class"')
+<template lang='html'>
+  <document-preview-vue>
+    <div class='content'>
+      <div class='preview'>
+        <div class='toolbar'>
+          <div class='toolbar-end'> 
+            <div class='toolbar-item'>
+              <icon-vue v-bind:style='"fas fa-users-class"'></icon-vue>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  .toolbar
-    .toolbar-center
-      .toolbar-item
-        label-vue.is-ellipsis.no-select {{ title }}
-    
-    .toolbar-end(v-if='showMenu')
-      .toolbar-item
-        dropdown-vue.is-top
-          template(v-slot:trigger='')
-            icon-vue.no-select(v-bind:style='"fas fa-ellipsis-h"')
-          template(v-slot:content='')
-            access-list-vue
+    <div class='toolbar'>
+      <div class='toolbar-center'>
+        <div class='toolbar-item'>
+          <label-vue class='is-ellipsis no-select'>{{ title }}</label-vue>
+        </div>
+      </div>
+      
+      <div class='toolbar-end' v-if='showMenu'>
+        <div class='toolbar-item'>
+          <dropdown-vue class='is-top'>
+            <template v-slot:trigger>
+              <icon-vue class='no-select' v-bind:style='"fas fa-ellipsis-h"'></icon-vue>
+            </template>
+            <template v-slot:content>
+              <access-list-vue></access-list-vue>
+            </template>
+          </dropdown-vue>
+        </div>
+      </div>
+    </div>
+  </document-preview-vue>
 
 </template>
 

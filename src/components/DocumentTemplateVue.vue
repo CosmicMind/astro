@@ -1,15 +1,5 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-section.document-template-vue
-  h1.title.is-1 {{ title }}
-
-  .templates
-    .template(v-for='(x, i) in templates', v-bind:key='i')
-      document-preview-vue(v-bind:title='x.title', v-bind:show-menu='showMenu')
-    
-</template>
-
 <script lang='ts'>
 import { defineComponent } from 'vue'
 
@@ -83,3 +73,16 @@ export default defineComponent({
 }
 
 </style>
+
+<template lang='html'>
+  <section class='document-template-vue'>
+    <h1 class='title.is-1'>{{ title }}</h1>
+
+    <div class='templates'>
+      <div class='template' v-for='(x, i) in templates' v-bind:key='i'>
+        <document-preview-vue v-bind:title='x.title' v-bind:show-menu='showMenu'></document-preview-vue>
+      </div>
+    </div>
+  </section>
+    
+</template>

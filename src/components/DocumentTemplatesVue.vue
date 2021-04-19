@@ -1,9 +1,10 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='pug'>
-section.document-templates-vue
-  document-template-vue(v-bind:title='"New Document"', v-bind:templates='templates', v-bind:show-menu='showMenu')
-  document-template-vue(v-bind:title='"History"', v-bind:templates='history')
+<template lang='html'>
+  <section class='document-templates-vue'>
+    <document-template-vue v-bind:title='"New Document"' v-bind:templates='templates' v-bind:show-menu='showMenu'></document-template-vue>
+    <document-template-vue v-bind:title='"History"' v-bind:templates='history'></document-template-vue>
+  </section>
 
 </template>
 

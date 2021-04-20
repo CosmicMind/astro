@@ -17,7 +17,7 @@ import keygrip from '^/keygrip.json'
 
 export function createApp(env: any): any {
   const app: any = new Koa()
-  app.proxy = process.env.DE_PROXY
+  app.proxy = process.env.NODE_PROXY
   app.keys = new KeyGrip(keygrip.keys, keygrip.hash)
   
   app.use(KoaBody())

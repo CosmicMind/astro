@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <modal-teleport>
     <slot></slot>
   </modal-teleport>

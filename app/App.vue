@@ -24,7 +24,7 @@ export default defineComponent({
 
 </script>
 
-<template lang='html'>
+<template>
   <composite-vue id='app-vue' class='app-vue'></composite-vue>
 
 </template>

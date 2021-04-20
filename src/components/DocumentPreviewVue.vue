@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <document-preview-vue>
     <div class='content'>
       <div class='preview'>

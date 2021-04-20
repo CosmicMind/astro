@@ -13,18 +13,18 @@ import { createApp } from '#/server/createApp'
 /**
  * Tells the ports matching to begin at the defined ports range.
  */
-const DE_PORTS_RANGE_START = process.env.DE_PORTS_RANGE_START
-if ('undefined' === typeof DE_PORTS_RANGE_START) throw new Error('DE_PORTS_RANGE_START missing from .env')
+const NODE_PORTS_RANGE_START = process.env.NODE_PORTS_RANGE_START
+if ('undefined' === typeof NODE_PORTS_RANGE_START) throw new Error('NODE_PORTS_RANGE_START missing from .env')
 
 const env = {
-  timezone: process.env.DE_TZ || 'America/Toronto',
-  env: process.env.DE_ENV || 'development',
-  name: process.env.DE_NAME || 'API',
-  ports: getCPUs().map((_, i) => DE_PORTS_RANGE_START + i),
-  proxy: process.env.DE_PROXY || true,
-  assets: process.env.DE_ASSETS,
-  public: process.env.DE_PUBLIC,
-  views: process.env.DE_VIEWS,
+  timezone: process.env.NODE_TZ || 'America/Toronto',
+  env: process.env.NODE_ENV || 'development',
+  name: process.env.NODE_NAME || 'API',
+  ports: getCPUs().map((_, i) => NODE_PORTS_RANGE_START + i),
+  proxy: process.env.NODE_PROXY || true,
+  assets: process.env.NODE_ASSETS,
+  public: process.env.NODE_PUBLIC,
+  views: process.env.NODE_VIEWS,
 }
 
 if (cluster.isWorker) {

@@ -74,7 +74,7 @@ export default defineComponent({
 
 </style>
 
-<template lang='html'>
+<template>
   <section class='document-template-vue'>
     <h1 class='title.is-1'>{{ title }}</h1>
 

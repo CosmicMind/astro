@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <list-vue class='access-list-vue'>
     <list-items-vue>
       <list-item-vue v-bind:key='"0"'>

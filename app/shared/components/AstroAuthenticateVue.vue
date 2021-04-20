@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <aside class='astro-authenticate-vue'>
     <input-vue v-model='email' type='text' placeholder='Email'></input-vue>
     <input-vue v-model='password' type='password' placeholder='Password'></input-vue>

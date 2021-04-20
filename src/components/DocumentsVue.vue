@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <section class='documents-vue'>
     <ul class='documents'>
       <li class='document' v-for='(x, i) in documents' v-bind:key='i'>

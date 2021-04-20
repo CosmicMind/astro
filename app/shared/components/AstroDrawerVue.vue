@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <drawer-vue v-bind:toggle-state='toggleState'>
     <aside class='astro-drawer-vue'>
       <nav class='navbar'>

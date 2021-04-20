@@ -18,8 +18,6 @@ import {
   aliasConfig,
   tsConfig,
   vueConfig,
-  foundationESMLibrary,
-  auroraESMLibrary,
   compositionESMLibrary,
   compositionStyleDirectory,
 } from '../rollup'
@@ -61,8 +59,6 @@ export default [
     external,
     watch: {
       include: [ 
-        foundationESMLibrary,
-        auroraESMLibrary,
         compositionESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'tests/**')
@@ -120,8 +116,6 @@ export default [
     external,
     watch: {
       include: [ 
-        foundationESMLibrary,
-        auroraESMLibrary,
         compositionESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'app/**')
@@ -148,8 +142,6 @@ export default [
     external,
     watch: {
       include: [ 
-        foundationESMLibrary,
-        auroraESMLibrary,
         compositionESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'server/**')

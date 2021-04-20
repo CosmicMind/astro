@@ -1,6 +1,6 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template lang='html'>
+<template>
   <composite-search-bar-vue>
     <template v-slot:start>
       <div class='navbar-item has-gutter grow'>

@@ -4,12 +4,12 @@
   <composite-main-vue>
     <button v-on:click='shouldShow = true'>Modal</button>
 
-    <astro-modal-teleport v-if='shouldShow'>
+    <astro-composite-modal-teleport-vue v-if='shouldShow'>
       <div class='modal'>
         <button v-on:click='shouldShow = false'>Close</button>
         <astro-authenticate-vue></asttro-authenticate-vue>
       </div>
-    </astro-modal-teleport>
+    </astro-composite-modal-teleport-vue>
   </composite-main-vue>
   
 </template>
@@ -20,17 +20,17 @@ import {
   defineComponent, 
 } from 'vue'
 
-import { MainVue as CompositeMainVue } from '$/composition'
+import { CompositeMainVue } from '$/composition'
 
-import AstroModalTeleport from '#/app/shared/components/AstroModalTeleport.vue'
+import AstroModalTeleportVue from '#/app/shared/components/AstroModalTeleportVue.vue'
 import AstroAuthenticateVue from '#/app/shared/components/AstroAuthenticateVue.vue'
 
 export default defineComponent({
-  name: 'DashboardSearchBarVue',
+  name: 'DashboardCompositeSearchBarVue',
 
   components: {
     CompositeMainVue,
-    AstroModalTeleport,
+    AstroModalTeleportVue,
     AstroAuthenticateVue,
   },
 

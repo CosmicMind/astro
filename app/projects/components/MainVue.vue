@@ -10,10 +10,10 @@
 <script lang='ts'>
 import { defineComponent } from 'vue'
 
-import { MainVue as CompositeMainVue } from '$/composition'
+import { CompositeMainVue } from '$/composition'
 
 export default defineComponent({
-  name: 'ProjectsSearchBarVue',
+  name: 'ProjectsCompositeSearchBarVue',
 
   components: {
     CompositeMainVue

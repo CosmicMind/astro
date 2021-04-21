@@ -2,19 +2,19 @@
 
 import { RouteRecordRaw } from 'vue-router'
 
-import AstroDrawerVue from '#/app/shared/components/AstroDrawerVue.vue'
+import AstroCompositeDrawerVue from '#/app/shared/components/AstroCompositeDrawerVue.vue'
 
-import SearchBarVue from '#/app/spaces/components/SearchBarVue.vue'
-import MainVue from '#/app/spaces/components/MainVue.vue'
+import CompositeSearchBarVue from '#/app/spaces/components/CompositeSearchBarVue.vue'
+import CompositeMainVue from '#/app/spaces/components/CompositeMainVue.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		name: 'Spaces',	
 		path: '/spaces/:spaceId',
 		components: {
-			'search-bar': SearchBarVue,
-			'drawer': AstroDrawerVue,
-			'main': MainVue,
+			'search-bar': CompositeSearchBarVue,
+			'drawer': AstroCompositeDrawerVue,
+			'main': CompositeMainVue,
 		},
 		props: true,
 	}

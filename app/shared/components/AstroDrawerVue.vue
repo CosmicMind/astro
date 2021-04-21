@@ -1,8 +1,8 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
 <template>
-  <drawer-vue v-bind:toggle-state='toggleState'>
-    <aside class='astro-drawer-vue'>
+  <composite-drawer-vue v-bind:toggle-state='toggleState'>
+    <aside class='astro-composite-drawer-vue'>
       <nav class='navbar'>
         <div class='navbar-end'>
           <div class='navbar-item'>
@@ -116,7 +116,7 @@
         </div>
       </div>
     </aside>
-  </drawer-vue>
+  </composite-drawer-vue>
 
 </template>
 
@@ -127,7 +127,7 @@ import {
 } from 'vue'
 
 import {
-  DrawerVue,
+  CompositeDrawerVue,
   DividerVue,
   ListVue,
   ListItemsVue,
@@ -141,10 +141,10 @@ import {
 } from '$/composition'
 
 export default defineComponent({
-  name: 'AstroDrawerVue',
+  name: 'AstroCompositeDrawerVue',
 
   components: {
-    DrawerVue,
+    CompositeDrawerVue,
     DividerVue,
     ListVue,
     ListItemsVue,
@@ -169,7 +169,7 @@ export default defineComponent({
 
     const onToggle = () => {
       isOpened.value = !isOpened.value
-      toggleState('drawer-vue-opened')
+      toggleState('composite-drawer-vue-opened')
     }
 
     const items = [
@@ -240,7 +240,7 @@ export default defineComponent({
 <style lang='scss'>
 @import 'tools/_dev';
 
-.astro-drawer-vue {
+.astro-composite-drawer-vue {
   position: absolute;
   top: 0;
   left: 0;
@@ -270,7 +270,7 @@ export default defineComponent({
     top: $navbar-height;
     left: 0;
     bottom: $toolbar-height;
-    width: $drawer-vue-width;
+    width: $composite-drawer-vue-width;
     overflow: auto;
 
     > .toolbar {

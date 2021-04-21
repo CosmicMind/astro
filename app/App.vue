@@ -3,7 +3,7 @@
 <script lang='ts'>
 import { defineComponent } from 'vue'
 
-import { CompositeVue } from '$/composition'
+import { CompositeAppVue } from '$/composition'
 
 import { Optional } from '$/foundation'
 
@@ -11,7 +11,7 @@ export default defineComponent({
   name: 'App',
 
   components: {
-    CompositeVue,
+    CompositeAppVue,
   },
 
   setup() {
@@ -25,6 +25,6 @@ export default defineComponent({
 </script>
 
 <template>
-  <composite-vue id='app-vue' class='app-vue'></composite-vue>
+  <composite-app-vue id='app-vue' class='app-vue'></composite-app-vue>
 
 </template>

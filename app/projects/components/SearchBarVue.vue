@@ -20,11 +20,11 @@ import { defineComponent } from 'vue'
 
 import {
   SearchVue,
-  SearchBarVue as CompositeSearchBarVue,
+  CompositeSearchBarVue,
 } from '$/composition'
 
 export default defineComponent({
-  name: 'ProjectsSearchBarVue',
+  name: 'ProjectsCompositeSearchBarVue',
 
   components: {
     CompositeSearchBarVue,

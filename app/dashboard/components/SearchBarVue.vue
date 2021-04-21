@@ -32,7 +32,7 @@ import { defineComponent } from 'vue'
 
 import {
   SearchVue,
-  SearchBarVue as CompositeSearchBarVue,
+  CompositeSearchBarVue,
   FigureVue,
   DropdownVue,
 } from '$/composition'
@@ -40,7 +40,7 @@ import {
 import AccessListVue from '@/components/AccessListVue.vue'
 
 export default defineComponent({
-  name: 'DashboardSearchBarVue',
+  name: 'DashboardCompositeSearchBarVue',
 
   components: {
     CompositeSearchBarVue,

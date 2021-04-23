@@ -1,19 +1,5 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template>
-  <composite-main-vue>
-    <button v-on:click='shouldShow = true'>Modal</button>
-
-    <astro-composite-modal-teleport-vue v-if='shouldShow'>
-      <div class='modal'>
-        <button v-on:click='shouldShow = false'>Close</button>
-        <astro-authenticate-vue></asttro-authenticate-vue>
-      </div>
-    </astro-composite-modal-teleport-vue>
-  </composite-main-vue>
-  
-</template>
-
 <script lang='ts'>
 import { 
   ref,
@@ -26,7 +12,7 @@ import AstroModalTeleportVue from '#/app/shared/components/AstroModalTeleportVue
 import AstroAuthenticateVue from '#/app/shared/components/AstroAuthenticateVue.vue'
 
 export default defineComponent({
-  name: 'DashboardCompositeSearchBarVue',
+  name: 'DashboardSearchBarVue',
 
   components: {
     CompositeMainVue,
@@ -44,3 +30,20 @@ export default defineComponent({
 })
 
 </script>
+
+<template>
+  <composite-main-vue>
+    <button v-on:click='shouldShow = true'>Modal</button>
+
+  </composite-main-vue>
+  
+</template>
+
+<!--
+<astro-modal-teleport-vue v-if='shouldShow'>
+      <div class='modal'>
+        <button v-on:click='shouldShow = false'>Close</button>
+        <astro-authenticate-vue></astro-authenticate-vue>
+      </div>
+    </astro-modal-teleport-vue>
+    -->

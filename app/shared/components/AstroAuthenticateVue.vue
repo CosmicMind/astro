@@ -1,14 +1,5 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
-<template>
-  <aside class='astro-authenticate-vue'>
-    <input-vue v-model='email' type='text' placeholder='Email'></input-vue>
-    <input-vue v-model='password' type='password' placeholder='Password'></input-vue>
-    <button-vue v-on:click='onAuthenticate'>Sign In</button>
-  </aside>
-    
-</template>
-
 <script lang='ts'>
 import { 
   ref,
@@ -111,3 +102,12 @@ export default defineComponent({
 }
 
 </style>
+
+<template>
+  <aside class='astro-authenticate-vue'>
+    <input-vue v-model='email' type='text' placeholder='Email'></input-vue>
+    <input-vue v-model='password' type='password' placeholder='Password'></input-vue>
+    <button-vue v-on:click='onAuthenticate'>Sign In</button-vue>
+  </aside>
+    
+</template>

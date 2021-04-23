@@ -1,5 +1,24 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
+<script lang='ts'>
+import { defineComponent } from 'vue'
+
+import {
+  SearchVue,
+  CompositeSearchBarVue,
+} from '$/composition'
+
+export default defineComponent({
+  name: 'ProjectsSearchBarVue',
+
+  components: {
+    CompositeSearchBarVue,
+    SearchVue,
+  },
+})
+
+</script>
+
 <template>
   <composite-search-bar-vue>
     <template v-slot:start>
@@ -12,24 +31,6 @@
         <search-vue></search-vue>
       </div>
     </template>
+  </composite-search-bar-vue>
   
 </template>
-
-<script lang='ts'>
-import { defineComponent } from 'vue'
-
-import {
-  SearchVue,
-  CompositeSearchBarVue,
-} from '$/composition'
-
-export default defineComponent({
-  name: 'ProjectsCompositeSearchBarVue',
-
-  components: {
-    CompositeSearchBarVue,
-    SearchVue,
-  },
-})
-
-</script>

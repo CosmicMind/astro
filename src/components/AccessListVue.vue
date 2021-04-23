@@ -1,5 +1,43 @@
 <!-- Copyright © 2020, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. -->
 
+<script lang='ts'>
+import { defineComponent } from 'vue'
+
+import {
+  DividerVue,
+  ListVue,
+  ListItemsVue,
+  ListItemVue,
+  LinkVue,
+  IconVue,
+  LabelVue,
+} from '$/composition'
+
+export default defineComponent({
+  name: 'AccessListVue',
+
+  components: {
+    DividerVue,
+    ListVue,
+    ListItemsVue,
+    ListItemVue,
+    LinkVue,
+    IconVue,
+    LabelVue,
+  },
+})
+
+</script>
+
+<style lang='scss'>
+@import 'tools/_dev';
+
+.access-list-vue {
+  
+}
+
+</style>
+
 <template>
   <list-vue class='access-list-vue'>
     <list-items-vue>
@@ -9,9 +47,10 @@
             <div class='column'>
               <label-vue class='is-nowrap has-gutter no-select'>Draft</label-vue>
             </div>
+          </div>
           <div class='row-end'>
             <div class='column'>   
-              <icon-vue v-bind:style='"fas fa-ruler-triangle"'>
+              <icon-vue v-bind:style='"fas fa-ruler-triangle"'></icon-vue>
             </div>
           </div>
         </div>
@@ -65,41 +104,3 @@
   </list-vue>
 
 </template>
-
-<script lang='ts'>
-import { defineComponent } from 'vue'
-
-import {
-  DividerVue,
-  ListVue,
-  ListItemsVue,
-  ListItemVue,
-  LinkVue,
-  IconVue,
-  LabelVue,
-} from '$/composition'
-
-export default defineComponent({
-  name: 'AccessListVue',
-
-  components: {
-    DividerVue,
-    ListVue,
-    ListItemsVue,
-    ListItemVue,
-    LinkVue,
-    IconVue,
-    LabelVue,
-  },
-})
-
-</script>
-
-<style lang='scss'>
-@import 'tools/_dev';
-
-.access-list-vue {
-  
-}
-
-</style>

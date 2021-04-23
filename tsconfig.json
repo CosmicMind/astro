@@ -10,7 +10,8 @@
   "references": [
     { "path": "../foundation" },
     { "path": "../aurora" },
-    { "path": "../composition" }
+    { "path": "../composition" },
+    { "path": "../focus" }
   ],
   "files": [],
   "include": [

@@ -18,8 +18,8 @@ import {
   aliasConfig,
   tsConfig,
   vueConfig,
-  compositionESMLibrary,
   compositionStyleDirectory,
+  focusESMLibrary,
 } from '../rollup'
 
 /**
@@ -59,7 +59,7 @@ export default [
     external,
     watch: {
       include: [ 
-        compositionESMLibrary,
+        focusESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'tests/**')
       ],
@@ -116,7 +116,7 @@ export default [
     external,
     watch: {
       include: [ 
-        compositionESMLibrary,
+        focusESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'app/**')
       ],
@@ -142,7 +142,7 @@ export default [
     external,
     watch: {
       include: [ 
-        compositionESMLibrary,
+        focusESMLibrary,
         path.resolve(__dirname, 'src/**'),
         path.resolve(__dirname, 'server/**')
       ],

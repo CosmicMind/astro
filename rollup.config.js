@@ -118,6 +118,7 @@ export default [
       include: [ 
         focusESMLibrary,
         path.resolve(__dirname, 'src/**'),
+        path.resolve(__dirname, 'lib/**'),
         path.resolve(__dirname, 'app/**')
       ],
     },

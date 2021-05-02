@@ -46,7 +46,7 @@
     "watch:test": "npx ava --watch",
     "build": "npm run clean && rollup -c",
     "watch": "npm run clean && rollup -cw",
-    "server": "node dist/server/server.esm.js"
+    "server": "node dist/server/server.es.js"
   },
   "repository": {
     "type": "git",

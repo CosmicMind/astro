@@ -69,7 +69,7 @@ export default [
   {
     input: 'lib/scss/index.scss',
     output: {
-      file: path.resolve(__dirname, 'dist/public/lib.css'),
+      file: path.resolve(__dirname, 'build/public/lib.css'),
     },
     plugins: [
       alias(aliasConfig),
@@ -90,7 +90,7 @@ export default [
     output: [
       {
         name: 'app',
-        file: path.resolve(__dirname, 'dist/public/app.js'),
+        file: path.resolve(__dirname, 'build/public/app.js'),
         format: 'es',
         sourcemap,
         plugins,
@@ -101,7 +101,7 @@ export default [
       vue(vueConfig),
       json(),
       postcss({
-        extract: path.resolve(__dirname, 'dist/public/app.css'),
+        extract: path.resolve(__dirname, 'build/public/app.css'),
         minimize,
         use: [
           ['sass', {

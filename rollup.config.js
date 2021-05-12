@@ -46,7 +46,7 @@ export default [
       {
         name: 'tests',
         file: path.resolve(__dirname, 'build/tests/tests.esm.mjs'),
-        format: 'es',
+        format: 'esm',
         sourcemap,
         plugins,
       }

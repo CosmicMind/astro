@@ -91,7 +91,7 @@ export default [
       {
         name: 'app',
         file: path.resolve(__dirname, 'build/public/app.js'),
-        format: 'es',
+        format: 'esm',
         sourcemap,
         plugins,
       },
@@ -129,8 +129,8 @@ export default [
     output: [
       {
         name: server,
-        file: path.resolve(__dirname, 'dist/server/server.es.js'),
-        format: 'es',
+        file: path.resolve(__dirname, 'dist/server/server.esm.js'),
+        format: 'esm',
         sourcemap,
         plugins,
       },

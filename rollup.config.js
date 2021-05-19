@@ -45,8 +45,8 @@ export default [
     output: [
       {
         name: 'tests',
-        file: path.resolve(__dirname, 'build/tests/tests.esm.mjs'),
-        format: 'esm',
+        file: path.resolve(__dirname, 'build/tests/tests.es.mjs'),
+        format: 'es',
         sourcemap,
         plugins,
       }
@@ -91,7 +91,7 @@ export default [
       {
         name: 'app',
         file: path.resolve(__dirname, 'build/public/app.js'),
-        format: 'esm',
+        format: 'es',
         sourcemap,
         plugins,
       },
@@ -129,8 +129,8 @@ export default [
     output: [
       {
         name: server,
-        file: path.resolve(__dirname, 'dist/server/server.esm.js'),
-        format: 'esm',
+        file: path.resolve(__dirname, 'dist/server/server.es.js'),
+        format: 'es',
         sourcemap,
         plugins,
       },
